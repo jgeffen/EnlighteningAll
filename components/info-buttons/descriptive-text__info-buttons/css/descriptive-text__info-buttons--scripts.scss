@@ -1,0 +1,201 @@
+@import "/css/_variables.scss";
+
+.info-btns {
+	$btn-border-weight: 2px;
+	$btn-border: $btn-border-weight solid $base;
+	
+	position: relative;
+	z-index: 4;
+	padding: 0;
+	
+	.btn-wrap {
+		display: block;
+		overflow: hidden;
+		border-right: $btn-border;
+		border-top: $btn-border;
+		
+		&:before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: calc(100% - #{$btn-border-weight});
+			height: calc(100% - #{$btn-border-weight});
+			margin-top: $btn-border-weight;
+			background: rgba($black, .25);
+			@include transition(all .2s);
+			
+			@media(max-width: 767px) {
+				display: none;
+			}
+		}
+		
+		.btn-content {
+			position: relative;
+			width: 100%;
+			border-top: $btn-border;
+			
+			.btn-title {
+				position: relative;
+				background: $primary;
+				margin: 0;
+				padding: 20px 15px;
+				color: $white;
+				font-size: 1.1em;
+				font-weight: bold;
+				text-align: center;
+				text-transform: uppercase;
+				@include transition(all .2s);
+				
+				@if $scheme-type == 'dark' {
+					background:  $base-accent;
+				} @else if $scheme-type == 'light' {
+					background:  $base-accent-xd;
+					color: $text;
+					text-shadow: none;
+				}
+				
+				&:before {
+					content: "\f054";
+					font-family: "Font Awesome 5 Pro";
+					font-weight: 900;
+					font-size: 16px;
+					margin-right: 7px;
+					color: $accent;
+					@include transition(all .2s);
+					
+					@media(max-width: 400px) {
+						display: none;
+					}
+				}
+				
+				i {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					position: absolute;
+					top: 0;
+					left: 0;
+					margin: 0;
+					padding: 0;
+					width: 70px;
+					height: 100%;
+					background: $accent;
+					color: $white;
+					border-right: $btn-border;
+					font-size: 28px;
+					
+					@if $scheme-type == 'dark' {
+						background: $primary;
+					} @else if $scheme-type == 'light' {
+						background: none;
+						color: $primary;
+						border-right: none;
+					}
+				}
+				
+				@media(max-width: 450px) {
+					 padding: 15px;
+				}
+				
+				&.equal-title {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					text-transform: none;
+					
+					&:before {
+						display: none;
+					}
+				}
+				
+				&.icon {
+					display: flex;
+					justify-content: flex-start;
+					align-items: center;
+					text-transform: none;
+					padding-left: 90px;
+					
+					&:before {
+						display: none;
+					}
+					
+					@if $scheme-type == 'light' {
+						padding-left: 65px;
+					}
+				}
+			}
+			
+			.btn-text {
+				padding: 20px 25px;
+				margin: 0;
+				border-top: $btn-border;
+				background: $primary-d;
+				color: $white;
+				
+				@if $scheme-type == 'dark' {
+					background: $base-accent-l;
+				} @else if $scheme-type == 'light' {
+					background: $base-accent-d;
+					color: $text;
+				}
+			}
+		}
+		
+		img {
+			width: 100%;
+		}
+		
+		&:hover {
+			text-decoration: none;
+			
+			&:before {
+				opacity: 0;
+			}
+		}	
+	}
+	
+	@media(min-width: 992px) {
+		.row > div:last-child {
+			.btn-wrap {
+				border-right: none;
+				
+				&:before {
+					width: 100%;
+				}
+				
+				img {
+					//Because the box that sits on the far right does not have a border-right, it causes the image to be slightly bigger, 
+					//which then causes that box to be slightly bigger/taller then the others. This negative margin-top corrects the issue. -Gene
+					margin-top: -$btn-border-weight / 1.5;
+				}
+			}
+		}
+	}
+	
+	@media(max-width: 991px) and (min-width: 576px) {
+		.row > div:nth-of-type(2n) {
+			.btn-wrap {
+				border-right: none;
+				
+				&:before {
+					width: 100%;
+				}
+				
+				img {
+					//Because the box that sits on the far right does not have a border-right, it causes the image to be slightly bigger, 
+					//which then causes that box to be slightly bigger/taller then the others. This negative margin-top corrects the issue. -Gene
+					margin-top: -$btn-border-weight / 1.5;
+				}
+			}
+		}	
+	}
+	
+	@media(max-width: 575px) {
+		.row > div {
+			.btn-wrap {
+				border-right: none;
+			}
+		}
+	}
+}

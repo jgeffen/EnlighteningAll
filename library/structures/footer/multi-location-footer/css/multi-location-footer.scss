@@ -1,0 +1,52 @@
+@import "/css/_variables.scss";
+
+#footer-wrapper {
+	background: $primary;
+	padding-top: 30px;
+	padding-bottom: 20px;
+	
+	hr {
+		border-color: rgba($white, .5);
+		margin: 15px 0px;
+	}
+	
+	* {
+		color: $white;
+	}
+	
+	a {
+		&:hover {
+			text-decoration: underline;
+		}
+	} 
+	
+	#footer-logo {
+		display: block;
+		width: 100%;
+		margin: 0 0 15px auto;
+	}
+	
+	@if $scheme-type == 'dark' {
+		background: $base-accent;
+		border-top: 1px solid $base-accent-xxl;
+		
+		hr {
+			border-color: $neutral-d;
+		}
+		
+		* {
+			color: $white;
+		}
+	} @else if $scheme-type == 'light' {
+		background: $base-accent;
+		border-top: 1px solid $base-accent-xxd;
+		
+		hr {
+			border-color: $neutral;
+		}
+		
+		* {
+			color: $text;
+		}
+	}
+}

@@ -1,0 +1,11 @@
+{% if active %}
+    <button class="toolbar__btn toolbar__btn-like toolbar__btn-active" type="button" data-post-action="unlike" rel="{{ count ? 'popover-likes' : '' }}">
+        <i class="far fa-heart mr-2"></i>
+        <span class="toolbar__btn-count">{{ count ?: '' }}</span>
+    </button>
+{% else %}
+    <button class="toolbar__btn toolbar__btn-like" type="button" data-post-action="like" rel="{{ count ? 'popover-likes' : '' }}">
+        <i class="far fa-heart mr-2"></i>
+        <span class="toolbar__btn-count">{{ count ?: '' }}</span>
+    </button>
+{% endif %}

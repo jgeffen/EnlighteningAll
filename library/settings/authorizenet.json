@@ -1,0 +1,15 @@
+{
+  "mode": "development",
+  "development": {
+    "api_login_id": "94wR5LyJ4n",
+    "transaction_key": "4b7Y42x69mC9ATDS",
+    "client_key": "9FbtRUaqVZx8JavH6Nu2rad3nS36595PvgFqSP7hUT7ATLH96vnN8eVpKAbtRhvc",
+    "currency": "USD"
+  },
+  "production": {
+    "api_login_id": "579H99phT3vP",
+    "transaction_key": "967pVx93W4KuFZ8A",
+    "client_key": "385zz83TqTpch7N9627YTfwykjSP5xLQc7XGhddA4rC8T92w2CLSuXGhuQ662S2C",
+    "currency": "USD"
+  }
+}

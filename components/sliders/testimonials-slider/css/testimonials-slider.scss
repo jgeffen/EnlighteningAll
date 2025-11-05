@@ -1,0 +1,190 @@
+@import "/css/_variables.scss";
+
+.testimonials-slider {
+	position: relative;
+	width: 100%;
+
+    .swiper-button-next, .swiper-button-prev {
+	    background: none;
+	    width: 40px;
+	    height: 40px;
+	    margin-top: -20px;
+	    right: 10px;
+	    z-index: 99;
+	    outline: none;
+	    opacity: .7;
+	    @include transition(all .2s);
+	    
+	    &:before, &:after {
+		    display: none;
+	    }
+	    
+	    &.swiper-button-disabled {
+		    display: none;
+	    }
+
+	    i {
+		    font-size: 40px;
+		    color: $white;
+		    
+		    @media(max-width: 600px) {
+				font-size: 30px;
+			}
+	    }
+
+	    &:hover {
+		    opacity: 1;
+	    }
+	    
+	    @media(max-width: 600px) {
+		    display: none;
+	    }
+    }
+
+    .swiper-button-prev {
+	    right: auto;
+	    left: 10px;
+    }
+    
+    .swiper-pagination-bullets,
+    .swiper-pagination-fraction {
+	    bottom: 25px;
+	     
+	    .swiper-pagination-bullet {
+			width: 30px;
+			height: 8px;
+			border-radius: 0;
+			background: $white;
+			opacity: .6;
+			outline: none;
+			
+			&:focus {
+				opacity: .8;
+			}
+			
+			&.swiper-pagination-bullet-active {
+				opacity: 1;
+				box-shadow: none;
+			}
+	    }
+    }
+    
+    .swiper-wrapper {
+	    align-items: center;
+    }
+    
+    .slide-content {
+	    padding: 110px 50px 130px;
+	    text-align: center;
+	    
+	    .slide-content__testimonial {
+		    font-size: 1.3em;
+		    margin-bottom: 30px;
+	    }
+	    
+	    @media(max-width: 600px) {
+			padding: 60px 15px 90px;
+			
+			.slide-content__testimonial {
+			    font-size: 1.1em;
+			    margin-bottom: 20px;
+		    }
+	    }
+    }
+    
+    &.component-background-primary {
+		background: $primary;
+	}
+	
+	&.component-background-accent {
+		background: $accent;
+	}
+	
+	&.component-background-neutral {
+		background: $neutral-d;
+		
+		@if $scheme-type == 'dark' {
+			background: $neutral-xxd;
+		}
+	}
+	
+	&.component-background-black {
+		background: $black;
+		
+		@if $scheme-type == 'dark' {
+			background: $base-accent;
+			border-top: 1px solid $base-accent-xxl;
+		}
+	}
+	
+	&.component-background-white {
+		background: $white;
+		
+		@if $scheme-type == 'light' {
+			background: $base-accent;
+			border-top: 1px solid $base-accent-xxd;
+		}
+	}
+	
+	&.component-text-primary {
+		*:not(.btn) {
+			color: $primary;
+		}
+		
+		.swiper-pagination-bullets .swiper-pagination-bullet {
+			background: $primary;     
+		}
+		
+		.swiper-button-next i, .swiper-button-prev i {
+			color: $primary;
+		}
+	}
+	
+	&.component-text-accent {
+		*:not(.btn) {
+			color: $accent;
+		}
+		
+		.swiper-pagination-bullets .swiper-pagination-bullet {
+			background: $accent;     
+		}
+		
+		.swiper-button-next i, .swiper-button-prev i {
+			color: $accent;
+		}
+	}
+	
+	&.component-text-neutral {
+		*:not(.btn) {
+			color: $neutral-d;
+		}
+		
+		.swiper-pagination-bullets .swiper-pagination-bullet {
+			background: $neutral-d;     
+		}
+		
+		.swiper-button-next i, .swiper-button-prev i {
+			color: $neutral-d;
+		}
+	}
+	
+	&.component-text-black {
+		*:not(.btn) {
+			color: #444444;
+		}
+		
+		.swiper-pagination-bullets .swiper-pagination-bullet {
+			background: #8c8c8c;     
+		}
+		
+		.swiper-button-next i, .swiper-button-prev i {
+			color: #737373;
+		}
+	}
+	
+	&.component-text-white {
+		*:not(.btn) {
+			color: $white;
+		}
+	}
+}

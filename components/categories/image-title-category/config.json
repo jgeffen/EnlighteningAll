@@ -1,0 +1,15 @@
+{
+    "version": "v1.0",
+    "title": "Image Title Category",
+    "content": "read-more.txt",
+    "enabled": "true",
+    "gallery": {
+        "main": "example-mobile.png",
+        "1": "example-desktop.png"
+    },
+    "dependencies": {
+        "core": {
+            "css":"image-title-category.scss"
+        }
+    }
+}

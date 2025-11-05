@@ -1,0 +1,23 @@
+/*||==========================================================||**
+**|| <--------------------- OPTIONS ------------------------> ||**
+**||==========================================================||*/
+TABLE NAME: Add the table name of the section you want to display
+MAIN TITLE: Sets the main title at the top of the box
+BACKGROUND COLOR: primary, accent, neutral, black, white
+TEXT COLOR: primary, accent, neutral, black, white
+
+/*||==========================================================||**
+**|| <------------------- RENDER CODE ----------------------> ||**
+**||==========================================================||*/
+
+======= COPY AND PASTE THIS CODE TO INSERT THE COMPONENT =======
+
+<?php /* - RENDER CATEGORY LIST RECENT ARTICLES COMPONENT - */ ?>	
+<?php Render::static_component('recent-articles/category-list/category-list', array(
+	'set_table'			=>	$table = 'blogs', //OPTION: SET THE TABLE NAME TO CHOOSE PAGE TYPE
+	'category'			=>	(new DatabaseHandler())->fetchAll("SELECT * FROM `categories` WHERE `table_name` = '$table' ORDER BY `position`, `timestamp` DESC LIMIT 6"),
+	'table'				=>	$table,
+	'main_title'		=>	'Recent Blog Articles',
+	'background_color'	=>	'primary', //OPTIONS: primary, accent, neutral, black, white
+	'text_color'		=>	'white', //OPTIONS: primary, accent, neutral, black, white
+)); ?>

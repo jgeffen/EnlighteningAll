@@ -1,0 +1,31 @@
+/* FULL CALENDAR */
+.fc-row.fc-widget-header {
+	background-color: #CE0000;
+}
+
+.fc-day.fc-widget-content {
+	background-color: rgba(104, 0, 0, 0.2);
+}
+
+.fc-day.fc-widget-content.fc-today {
+	background: rgba(44, 62, 80, 0.2);
+}
+
+.fc-unthemed .fc-list-item:hover td {
+	background: rgba(44, 62, 80, 0.3);
+}
+
+.fc-unthemed .fc-list-empty {
+	background: linear-gradient(90deg, #CE0000, #680000);
+}
+
+.fc-unthemed .fc-divider, .fc-unthemed .fc-list-heading td, .fc-unthemed .fc-popover .fc-header {
+	background: linear-gradient(90deg, #CE0000, #680000);
+}
+
+.fc-day-grid-event.past-event {
+	color: #FFFFFF;
+	background-color: #2C3E50;
+	border-color: #2C3E50;
+	opacity: .65;
+}

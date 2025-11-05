@@ -1,0 +1,229 @@
+@import "/css/_variables.scss";
+
+.photo-title-boxes {
+	$btn-border-weight: 2px;
+	$btn-border: $btn-border-weight solid $base;
+	
+	position: relative;
+	z-index: 4;
+	padding: 0;
+	
+	.btn-wrap {
+		position: relative;
+		display: block;
+		overflow: hidden;
+		border-right: $btn-border;
+		border-top: $btn-border;
+		
+		&:before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: calc(100% - #{$btn-border-weight});
+			height: calc(100% - #{$btn-border-weight});
+			margin-top: $btn-border-weight;
+			background: rgba($black, .25);
+			@include transition(all .2s);
+			
+			@media(max-width: 767px) {
+				display: none;
+			}
+		}
+		
+		.btn-title {
+			font-size: 1.06em;
+			font-weight: bold;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			margin: 0;
+			padding: 20px 15px;
+			text-align: center;
+			text-transform: uppercase;
+			border-top: $btn-border;
+			border-right: $btn-border;
+			background: rgba($base-accent, 0.9);
+			color: $text;
+			text-shadow: none;
+			@include transition(all .2s);
+			
+			@if $scheme-type == 'dark' {
+				background:  rgba($base-accent, 0.85);
+			} @else if $scheme-type == 'light' {
+				background:  rgba($base-accent, 0.9);
+				color: $text;
+				text-shadow: none;
+			}
+
+			&:before {
+				font-family: "Font Awesome 6 Pro";
+				font-size: 16px;
+				font-weight: 900;
+				margin-right: 7px;
+				content: "\f054";
+				color: $accent-l;
+				@include transition(all .2s);
+
+				@media(max-width: 400px) {
+					display: none;
+				}
+			}
+			
+			i {
+				font-size: 28px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 70px;
+				height: 100%;
+				margin: 0;
+				padding: 0 30px;
+				border-right: $btn-border;
+				background: none;
+				color: $primary;
+				border-right: none;
+				
+				@if $scheme-type == 'dark' {
+					background: $primary;
+				} @else if $scheme-type == 'light' {
+					background: none;
+					color: $primary;
+					border-right: none;
+				}
+				
+				@media(min-width: 768px) and (max-width: 1000px) {
+					display: none;
+				}
+				
+				@media(max-width: 500px) {
+					display: none;
+				}
+			}
+			
+			@media(max-width: 1100px) {
+				font-size: 1em;
+			}
+			
+			@media(max-width: 767px) {
+				background: rgba($primary-d, 0.9);
+				
+				@if $scheme-type == 'dark' {
+					background:  rgba($base-accent, 0.85);
+				} @else if $scheme-type == 'light' {
+					background:  rgba($base-accent, 0.9);
+				}
+			}
+			
+			@media(max-width: 450px) {
+				 padding: 15px;
+			}
+			
+			&.equal-title {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-transform: none;
+
+				&:before {
+					display: none;
+				}
+				
+				@media(max-width: 900px) {
+					font-size: .9em;
+				}
+				
+				@media(max-width: 767px) {
+					font-size: 1em;
+				}
+				
+				@media(max-width: 450px) {
+					font-size: .9em;
+				}
+				
+				@media(max-width: 350px) {
+					font-size: .8em;
+				}
+			}
+			
+			&.icon {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-transform: none;
+
+				&:before {
+					display: none;
+				}
+				
+				@media(min-width: 1001px) {
+					padding-left: 90px;
+					justify-content: flex-start;
+					
+					@if $scheme-type == 'light' {
+						padding-left: 65px;
+					}	
+				}
+				
+				@media(min-width: 501px) and (max-width: 767px) {
+					padding-left: 90px;
+					justify-content: flex-start;
+					
+					@if $scheme-type == 'light' {
+						padding-left: 65px;
+					}	
+				}
+			}
+		}
+
+		img {
+			width: 100%;
+		}
+
+		&:hover {
+			&:before {
+				opacity: 0;
+			}
+		}
+	}
+	
+	@media(min-width: 768px) {
+		.row > div:nth-of-type(4n) {
+			.btn-wrap {
+				border-right: none;
+				
+				&:before {
+					width: 100%;
+				}
+				
+				img {
+					margin-top: -$btn-border-weight;
+				}
+				
+				.btn-title {
+					border-right: none;
+				}
+			}
+		}	
+	}
+	
+	@media(max-width: 767px) {
+		.row > div:nth-of-type(2n) {
+			.btn-wrap {
+				border-right: none;
+				
+				img {
+					margin-top: -$btn-border-weight;
+				}
+				
+				.btn-title { 
+					border-right: none;
+				}
+			}
+		}
+	}
+}

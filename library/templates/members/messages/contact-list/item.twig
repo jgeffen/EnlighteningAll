@@ -1,0 +1,20 @@
+<li class="list-group-item p-0 mb-0" data-member-id="{{ contact.id }}">
+    <a class="media" href="#" data-messages-action="load-message-pane">
+        <img class="align-self-start" src="{{ contact.avatar }}" alt="{{ contact.alt }}">
+        <div class="media-body p-2">
+            <h5 class="mt-0 mb-1">
+                {{ contact.username }}
+                <span class="badge badge-secondary float-right">{{ badge }}</span>
+            </h5>
+
+            <p class="text-truncate text-muted mb-0" style="width:200px">
+                {{ preview }}
+            </p>
+
+            {% if read == false %}
+                <p class="text-center mt-2 mb-0"><small>Unread</small></p>
+            {% endif %}
+        </div>
+    </a>
+</li>
+

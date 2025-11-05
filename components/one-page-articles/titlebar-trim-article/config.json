@@ -1,0 +1,12 @@
+{
+    "version": "v1.0",
+    "title": "Titlebar Trim Article",
+    "content": "read-me.txt",
+    "enabled": "true",
+    "gallery": {
+        "main": "example.jpg"
+    },
+    "dependencies": {
+
+    }
+}

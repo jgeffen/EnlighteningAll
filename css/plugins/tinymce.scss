@@ -1,0 +1,23 @@
+.tox {
+	&.tox-tinymce-aux {
+		z-index: 9999 !important;
+
+		.tox-dialog-wrap__backdrop {
+			background-color: rgba(0, 0, 0, .50);
+		}
+	}
+}
+
+[data-tinymce~="align-toolbar-last-right"] {
+	.tox {
+		.tox-toolbar__group:last-child {
+			margin-left: auto !important;
+		}
+	}
+}
+
+[data-tinymce~="no-border"] {
+	.tox {
+		border: none !important;;
+	}
+}

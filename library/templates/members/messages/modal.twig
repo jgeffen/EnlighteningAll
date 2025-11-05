@@ -1,0 +1,17 @@
+<div id="ajax-message-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" data-profile-id="{{ contact.id }}">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header border-bottom-0">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+                <h2 class="modal-title">{{ contact.username }}</h2>
+            </div>
+
+            <div class="modal-body p-0" data-tinymce="align-toolbar-last-right">
+                <textarea id="ajax-message-modal-textarea" class="form-control" name="message" placeholder="Type your message..." aria-label="Type your message..."></textarea>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,202 @@
+@import "/css/_variables.scss";
+
+.article-boxes-3up {
+	position: relative;
+	padding-top: 50px;
+	padding-bottom: 25px;
+	background: $primary;
+	overflow: hidden;
+	
+	@if $scheme-type == 'dark' {
+		background: $base-accent;
+		border-top: 1px solid $base-accent-xxl;
+	} @else if $scheme-type == 'light' {
+		background: $base-accent;
+		border-top: 1px solid $base-accent-xxd;
+		
+		.btn-outline-white {
+			background-color: none;
+			border-color: $neutral-d;
+			color: darken($neutral-xd, 5%);
+			
+			&:hover, &:focus, &:active, &:active:focus {
+				background-color: rgba($neutral, .1) !important;
+				color: $neutral-xd !important;
+			}
+		}
+	}
+	
+	.ab3up-title {
+		[class^="title-super-"] {
+			position: relative;
+			color: $white;
+			margin-top: 0;
+			margin-bottom: 0;
+			
+			b {
+				color: $white;
+			}
+		}
+		
+		.btn-outline-white {
+			float: right;
+			padding: 5px 20px;
+			border-width: 1px;
+		}
+		
+		hr {
+			border-color: $primary-xl;
+			margin: 20px 0 30px;
+		}
+		
+		@if $scheme-type == 'dark' {
+			hr {
+				border-color: lighten($base-accent-xxl, 10%);	
+			}
+		} @else if $scheme-type == 'light' {
+			[class^="title-super-"] {
+				color: $text;
+			}
+			
+			[class^="title-super-"] b {
+				color: $primary;	
+			}
+			
+			hr {
+				border-color: $neutral-l;	
+			}
+		}
+	}
+	
+	div[class^="col-"] {
+		@include perspective(1000px);
+	}
+	
+	.ab3up-article-wrap {
+		background: darken($primary, 5%);
+		border: 1px solid $primary-xl;
+		border-radius: 15px;
+		max-width: 450px;
+		padding: 27px 30px 30px;
+		margin: 0 auto 30px;
+		
+		@media(max-width: 400px) {
+			padding: 20px;
+		}
+		
+		.equal-content {
+			margin-bottom: 20px;
+		}
+		
+		img {
+			display: block;
+		    margin: 0 auto 15px;
+		    
+		    &.border {
+			    border: 1px solid $primary-xl !important;
+			    @include transition(all .2s);
+		    }
+		    
+		    &:hover.border {
+			    border-color: $white !important;
+		    }
+		}
+		
+		h2, p {
+			color: $white;
+		}
+		
+		h2 {
+			font-size: 1.2em;
+			margin-bottom: 20px;
+			
+			a {
+				display: block;
+				color: $white;
+				border-bottom: 1px solid $primary-xl;
+				padding-bottom: 12px;
+				@include transition(all .2s); 
+				
+				&:hover {
+					border-bottom-color: $white;
+				}
+			}
+		}
+		
+		p {
+			margin: 0;
+		}
+		
+		@if $scheme-type == 'dark' {
+			background: $base-accent-l;
+			border-color: lighten($base-accent-xxl, 10%) !important;
+			
+			img.border {
+				border-color: lighten($base-accent-xxl, 10%) !important;
+				
+				&:hover {
+					border-color: $neutral-xl !important;
+				}
+			}
+			
+			h2 a {
+				border-color: lighten($base-accent-xxl, 10%) !important;
+				
+				&:hover {
+					border-color: $neutral-xl !important;
+				}
+			}
+		} @else if $scheme-type == 'light' {
+			background: $base-accent-d;
+			border-color: lighten($neutral-l, 3%) !important;
+			
+			img.border {
+				border-color: lighten($neutral-l, 3%) !important;
+				
+				&:hover {
+					border-color: $neutral-l !important;
+				}
+			}
+			
+			h2, p {
+				color: $text;
+			}
+			
+			h2 a {
+				color: $text;
+				border-color: lighten($neutral-l, 3%) !important;
+				
+				&:hover {
+					border-color: $neutral-l !important;
+				}
+			}
+			
+			.btn-outline-white {
+				background-color: $primary;
+				border-color: $primary;
+				color: $white !important;
+				
+				&:hover, &:focus, &:active, &:active:focus {
+					background-color: $primary-l !important;
+					border-color: $primary-l !important;
+					color: $white !important;
+				}
+			}
+		}
+	}
+	
+	hr {
+		border-color: $primary-xl;
+		margin: 0 0 30px;
+		
+		@if $scheme-type == 'dark' {
+			border-color: lighten($base-accent-xxl, 10%);
+		} @else if $scheme-type == 'light' {
+			border-color: $base-accent-xxd;
+		}
+	}
+	
+	@media(max-width: 767px) {
+		padding-bottom: 50px;
+	}	
+}

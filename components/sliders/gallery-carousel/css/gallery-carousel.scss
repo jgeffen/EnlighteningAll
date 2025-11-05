@@ -1,0 +1,93 @@
+@import "/css/_variables.scss";
+
+.gallery-carousel-wrap {
+	max-width: 800px;
+	margin: 30px auto;
+	
+	.swiper-button-next, .swiper-button-prev {
+	    background: none;
+	    width: 29px;
+	    height: 44px;
+	    margin-top: -22px;
+	    right: 12px;
+	    z-index: 99;
+	    outline: none;
+	    opacity: .7;
+	    @include transition(all .2s);
+	    
+	    &:after {
+		    display: none;
+	    }
+
+	    i {
+		    font-size: 44px;
+		    color: $white;
+		    text-shadow: 0 0 10px rgba($black, .4);
+	    }
+
+	    &:hover, &:focus {
+		    opacity: 1;
+	    }
+
+	    @media(max-width: 767px) {
+		    display: none;
+	    }
+	    
+	    &.swiper-button-disabled {
+		    pointer-events: all;
+		    opacity: .3;
+	    }
+    }
+
+    .swiper-button-prev {
+	    right: auto;
+	    left: 12px;
+    }
+    
+    .gallery-top {
+	    img {
+		    max-width: 100%;
+	    }
+    }
+	
+	.gallery-thumbs {
+		margin-top: 10px;
+		
+		.swiper-slide {
+			opacity: .7;
+			
+			img {
+				width: 100%;
+			}
+		}
+		
+		.swiper-slide-thumb-active {
+			opacity: 1;
+		}
+		
+		@media(max-width: 449px) {
+			margin-top: 6px;
+		}
+	}
+	
+	&.inset-carousel {
+		max-width: 600px;
+		
+		&.left, &.right {
+			margin: 5px 25px 25px 0;
+			
+			@media (max-width: 1050px) {
+				&.inset-carousel {
+					float: none;
+					max-width: 800px;
+					margin: 30px auto;
+				}
+			}
+		}
+		
+		&.right {
+			margin: 5px 0 25px 25px;
+		}
+	}
+
+}

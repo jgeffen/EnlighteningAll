@@ -1,0 +1,59 @@
+/*||==========================================================||**
+**|| <--------------------- OPTIONS ------------------------> ||**
+**||==========================================================||*/
+MAIN TITLE: Sets the main title at the top of the box
+BACKGROUND COLOR: primary, accent, neutral, black, white
+TEXT COLOR: primary, accent, neutral, black, white
+
+/*||==========================================================||**
+**|| <------------------- RENDER CODE ----------------------> ||**
+**||==========================================================||*/
+
+======= COPY AND PASTE THIS CODE TO INSERT THE COMPONENT =======
+
+<?php /* - RENDER MULTI SECTION LIST RECENT ARTICLES COMPONENT - */ ?>	
+<?php
+	Render::Component('recent-articles/multi-section-list/multi-section-list', array(
+		'main_title'       => 'Stay Up to Date',
+		'background_color' => 'primary', //OPTIONS: primary, accent, neutral, black, white
+		'text_color'       => 'white', //OPTIONS: primary, accent, neutral, black, white
+		'sections'         => array(
+			array(
+				'alt'   => 'Recent Blogs',
+				'title' => 'Recent Blogs',
+				'link'  => '/blogs.html',
+				'items' => array_map(function($item) {
+					return array(
+						'alt'   => $item->getEncoded('page_title'),
+						'title' => $item->getHeading(),
+						'link'  => sprintf("/blogs/%s.html", $item['page_url']),
+					);
+				}, Database::Action("SELECT * FROM `blogs` WHERE `published` = 1 ORDER BY `position`, `published_date` DESC LIMIT 5")->fetchAll(PDO::FETCH_ASSOC))
+			),
+			array(
+				'alt'   => 'Recent Events',
+				'title' => 'Recent Events',
+				'link'  => '/events',
+				'items' => array_map(function($item) {
+					return array(
+						'alt'   => $item->getEncoded('page_title'),
+						'title' => $item->getHeading(),
+						'link'  => sprintf("/events/%s/%s.html", strtolower(date('Y/F', strtotime($item['date_start']))), $item['page_url']),
+					);
+				}, Database::Action("SELECT * FROM `events` WHERE CURDATE() BETWEEN `date_start` AND `date_end` ORDER BY `date_start`, `date_end` LIMIT 5")->fetchAll(PDO::FETCH_ASSOC))
+			),
+			array(
+				'alt'   => 'Recent News',
+				'title' => 'Recent News',
+				'link'  => '/news.html',
+				'items' => array_map(function($item) {
+					return array(
+						'alt'   => $item->getEncoded('page_title'),
+						'title' => $item->getHeading(),
+						'link'  => sprintf("/news/%s.html", $item['page_url']),
+					);
+				}, Database::Action("SELECT * FROM `news` WHERE `published` = 1 ORDER BY `position`, `published_date` DESC LIMIT 5")->fetchAll(PDO::FETCH_ASSOC))
+			)
+		)
+	));
+?>

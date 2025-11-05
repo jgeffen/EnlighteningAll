@@ -1,0 +1,26 @@
+<nav id="nav-options">
+    <ul>
+        <li>
+            <a class="icon-labeled" href="/user/edit/subscriptions/{{ id }}">
+                <i class="fa-regular fa-pen-to-square"></i>
+                <span>Edit</span>
+            </a>
+        </li>
+
+        {% if default %}
+            <li>
+                <a class="icon-labeled disabled" href="#" data-action="delete">
+                    <i class="fa-regular fa-trash-can"></i>
+                    <span>Delete</span>
+                </a>
+            </li>
+        {% else %}
+            <li>
+                <a class="icon-labeled" href="#" data-action="delete">
+                    <i class="fa-regular fa-trash-can"></i>
+                    <span>Delete</span>
+                </a>
+            </li>
+        {% endif %}
+    </ul>
+</nav>

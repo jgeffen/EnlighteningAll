@@ -1,0 +1,157 @@
+@import "/css/_variables.scss";
+
+// Disable the sticky nav when sticky alert box is enabled
+#alert-bar.component-fixed.position-top + #header-wrapper + #nav-top > #nav-wrapper.stuck {
+	position: relative;
+}
+
+#alert-bar {
+	background: $primary;
+	padding-top: 18px;
+	padding-bottom: 18px;
+	text-align: center;
+	
+	.content-wrap {
+		margin: 0 auto;
+		
+		h2, h3, h4, p, ul, ol {
+			color: $white;
+		}
+		
+		h2 {
+			margin-bottom: 0;
+			
+			&.title-underlined {
+				display: block;
+				margin: 0 0 10px;
+				padding-bottom: 8px;
+			}
+		}
+		
+		p {
+			margin-bottom: 0;
+		}
+	}
+	
+	.btn {
+		margin: 0;
+		
+		&.btn-small {
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+		
+		&.btn-medium {
+			padding-top: 10px;
+			padding-bottom: 10px;
+		}
+		
+		&.btn-large {
+			padding-top: 15px;
+			padding-bottom: 15px;
+		}
+	}
+	
+	&.component-fixed {
+		position: fixed;
+		z-index: 1000;
+		
+		&.position-top {
+			top: 0;
+		}
+		
+		&.position-bottom {
+			bottom: 0;
+		}
+	}
+	
+	&.component-background-primary {
+		background: $primary;
+	}
+	
+	&.component-background-accent {
+		background: $accent;
+	}
+	
+	&.component-background-neutral {
+		background: $neutral-d;
+		
+		@if $scheme-type == 'dark' {
+			background: $neutral-xxd;
+		} @else if $scheme-type == 'light' {
+			background: $neutral;
+		}
+	}
+	
+	&.component-background-black {
+		background: $black;
+	}
+	
+	&.component-background-white {
+		background: $white;
+	}
+	
+	&.component-background-red {
+		background: $alert;
+	}
+	
+	&.component-text-primary {
+		.content-wrap * {
+			color: $primary;
+		}
+		
+		.title-underlined {
+			border-color: rgba($primary, .5);
+		}
+	}
+	
+	&.component-text-accent {
+		.content-wrap * {
+			color: $accent;
+		}
+		
+		.title-underlined {
+			border-color: rgba($accent, .5);
+		}
+	}
+	
+	&.component-text-neutral {
+		.content-wrap * {
+			color: $neutral;
+		}
+		
+		.title-underlined {
+			border-color: rgba($neutral, .5);
+		}
+	}
+	
+	&.component-text-black {
+		.content-wrap * {
+			color: #444444;
+		}
+		
+		.title-underlined {
+			border-color: rgba($text, .5);
+		}
+	}
+	
+	&.component-text-white {
+		.content-wrap * {
+			color: $white;
+		}
+		
+		.title-underlined {
+			border-color: rgba($white, .5);
+		}
+	}
+	
+	&.component-text-red {
+		.content-wrap * {
+			color: $alert;
+		}
+		
+		.title-underlined {
+			border-color: rgba($alert, .5);
+		}
+	}
+}

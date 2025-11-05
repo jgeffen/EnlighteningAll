@@ -1,0 +1,10 @@
+{
+    "version": "v1.0",
+    "title": "Photo Grid",
+    "content": "read-me.txt",
+    "enabled": "true",
+    "gallery": {
+    },
+    "dependencies": {
+    }
+}

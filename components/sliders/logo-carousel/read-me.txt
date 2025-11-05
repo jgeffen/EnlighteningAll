@@ -1,0 +1,24 @@
+/*||==========================================================||**
+**|| <------------------- REQUIREMENTS ---------------------> ||**
+**||==========================================================||*/
+REQUIRES: Swiper Jquery Pluggin
+IMAGE SIZE: 450 x 200px
+
+/*||==========================================================||**
+**|| <--------------------- OPTIONS ------------------------> ||**
+**||==========================================================||*/
+TABLE NAME: Add the table name of the slider
+
+/*||==========================================================||**
+**|| <------------------- RENDER CODE ----------------------> ||**
+**||==========================================================||*/
+
+======= COPY AND PASTE THIS CODE TO INSERT THE COMPONENT =======
+
+<?php /* - RENDER LOGO CAROUSEL COMPONENT - */ ?>
+<?php Render::static_component('sliders/logo-carousel/logo-carousel', array(
+	'set_table'			=>	$table = 'sponsors', //OPTION: SET THE TABLE NAME TO CHOOSE THE SLIDER
+	'data'				=>	(new DatabaseHandler())->fetchAll("SELECT * FROM `$table` ORDER BY `position`, `timestamp` DESC"),
+	'image_path'		=>	'/files/' . $table . '/landscape_image/thumb/', //REQUIREMENT: Set Image Crop Size to 1600 x 550px
+	'table'				=>	$table,
+)); ?>

@@ -1,0 +1,24 @@
+/*||==========================================================||**
+**|| <------------------- REQUIREMENTS ---------------------> ||**
+**||==========================================================||*/
+REQUIRES: FullCalendar 4.x (https://fullcalendar.io/)
+
+/*||==========================================================||**
+**|| <--------------------- OPTIONS ------------------------> ||**
+**||==========================================================||*/
+ENDPOINT: Url of the Ajax script that returns a JSON of the event data for the calendar
+CATEGORY: Category ID to pass into Ajax script
+
+/*||==========================================================||**
+**|| <------------------- RENDER CODE ----------------------> ||**
+**||==========================================================||*/
+
+======= COPY AND PASTE THIS CODE TO INSERT THE COMPONENT =======
+
+<?php /* - RENDER CALENDAR COMPONENT - */ ?>
+<?php
+	Render::static_component('calendars/fullcalendar/events', array(
+		'endpoint' => '/ajax/events/fetch', // (Required) Ajax script to return JSON of event data
+		'category' => NULL // (Optional) Category ID for Ajax script
+	));
+?>

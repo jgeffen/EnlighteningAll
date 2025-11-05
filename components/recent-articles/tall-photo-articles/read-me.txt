@@ -1,0 +1,24 @@
+/*||==========================================================||**
+**|| <------------------- REQUIREMENTS ---------------------> ||**
+**||==========================================================||*/
+IMAGE SIZE: 600 x 750px
+
+
+/*||==========================================================||**
+**|| <---------------------- OPTIONS -----------------------> ||**
+**||==========================================================||*/
+TABLE NAME: SET THE TABLE NAME TO CHOOSE PAGE TYPE(EXAMPLE: BLOG, NEWS, ETC.)
+
+
+/*||==========================================================||**
+**|| <------------------- RENDER CODE ----------------------> ||**
+**||==========================================================||*/
+
+======= COPY AND PASTE THIS CODE TO INSERT THE COMPONENT =======
+
+<?php Render::static_component('recent-articles/tall-photo-articles/tall-photo-articles', array(
+	'set_table'		=>	$table = 'blogs', //OPTION: SET THE TABLE NAME TO CHOOSE PAGE TYPE
+	'data'			=>	(new DatabaseHandler())->fetchAll("SELECT * FROM `$table` ORDER BY `position`, `timestamp` DESC LIMIT 4"),
+	'image_path'	=>	'/files/' . $table . '/portrait_image/recent_article/', //REQUIREMENT: Set Image Crop Size to 600 x 750px
+	'table'			=>	$table
+)); ?>

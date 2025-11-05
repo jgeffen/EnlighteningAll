@@ -1,0 +1,49 @@
+/*||==========================================================||**
+**|| <------------------- REQUIREMENTS ---------------------> ||**
+**||==========================================================||*/
+IMAGE SIZE: 600 x 600px
+
+
+/*||==========================================================||**
+**|| <---------------------- OPTIONS -----------------------> ||**
+**||==========================================================||*/
+OVERLAY COLOR: primary, accent, neutral, black, gray
+
+
+/*||==========================================================||**
+**|| <------------------- RENDER CODE ----------------------> ||**
+**||==========================================================||*/
+
+======= COPY AND PASTE THIS CODE TO INSERT THE COMPONENT =======
+
+<?php /* - RENDER ICON PHOTO INFO BUTTONS COMPONENT - */ ?>
+<?php Render::Component('info-buttons/icon-photo-boxes/icon-photo-boxes', array(
+	array(
+		'image'		=> '/images/samples/info-buttons/button-1.jpg', //IMAGE SIZE: 600 x 600px
+		'icon'		=> '<i class="fal fa-user-chart"></i>',
+		'overlay'	=> 'accent', //OPTIONS: primary, accent, neutral, black, gray
+		'title'		=> 'Services',
+		'link'		=> '/services.php'
+	),
+	array(
+		'image'		=> '/images/samples/info-buttons/button-2.jpg', //IMAGE SIZE: 600 x 600px
+		'icon'		=> '<i class="fal fa-box-full"></i>',
+		'overlay'	=> 'primary', //OPTIONS: primary, accent, neutral, black, gray
+		'title'		=> 'Products',
+		'link'		=> '/products.php'
+	),
+	array(
+		'image'		=> '/images/samples/info-buttons/button-3.jpg', //IMAGE SIZE: 600 x 600px
+		'icon'		=> '<i class="fal fa-calendar-week"></i>',
+		'overlay'	=> 'gray', //OPTIONS: primary, accent, neutral, black, gray
+		'title'		=> 'Events',
+		'link'		=> '/events.php'
+	),
+	array(
+		'image'		=> '/images/samples/info-buttons/button-4.jpg', //IMAGE SIZE: 600 x 600px
+		'icon'		=> '<i class="fal fa-envelope"></i>',
+		'overlay'	=> 'black', //OPTIONS: primary, accent, neutral, black, gray
+		'title'		=> 'Contact Us',
+		'link'		=> '/contact.php'
+	)
+)); ?>

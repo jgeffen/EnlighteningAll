@@ -1,0 +1,25 @@
+/*||==========================================================||**
+**|| <------------------- REQUIREMENTS ---------------------> ||**
+**||==========================================================||*/
+IMAGE SIZE: 450 x 300px
+
+
+/*||==========================================================||**
+**|| <---------------------- OPTIONS -----------------------> ||**
+**||==========================================================||*/
+TABLE NAME: SET THE TABLE NAME TO CHOOSE PAGE TYPE(EXAMPLE: BLOG, NEWS, ETC.)
+
+
+/*||==========================================================||**
+**|| <------------------- RENDER CODE ----------------------> ||**
+**||==========================================================||*/
+
+======= COPY AND PASTE THIS CODE TO INSERT THE COMPONENT =======
+
+<?php /* - RENDER ARTICLE BOXES 3UP COMPONENT - */ ?>
+<?php Render::static_component('recent-articles/article-boxes-3up/article-boxes-3up', array(
+	'set_table'		=>	$table = 'news', //OPTION: SET THE TABLE NAME TO CHOOSE PAGE TYPE
+	'data'			=>	(new DatabaseHandler())->fetchAll("SELECT * FROM `$table` ORDER BY `position`, `timestamp` DESC LIMIT 3"),
+	'image_path'	=>	'/files/' . $table . '/landscape_image/thumb/', //REQUIREMENT: Set Image Crop Size to 450 x 300px
+	'table'			=>	$table
+)); ?>

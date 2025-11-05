@@ -1,0 +1,38 @@
+.titlebar-trim-faq {
+	align-items: stretch;
+	
+	.title-bar-trim-combo {
+		display: flex;
+		flex-direction: column;
+		justify-content: stretch;
+		height: calc(100% - 30px);
+		
+		.trim {
+			display: flex;
+		    flex-direction: column;
+		    flex: 1 1 auto;
+		    
+		    .article-content {
+				display: flex;
+				flex-direction: column;
+				flex: 1 1 auto;
+				
+				.btn {
+					position: relative;
+					margin-top: auto;
+					margin-bottom: 25px;
+					top: 10px;
+				}
+			}
+		}
+		
+		//Disable for IE since the Flex support is limited
+		@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+			display: block;
+			
+			.trim, .article-content {
+				display: block;
+			}
+		}
+	}
+}

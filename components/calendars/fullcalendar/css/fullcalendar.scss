@@ -1,0 +1,109 @@
+@import "../../../../css/variables";
+
+.fc {
+	.fc-list-table {
+		margin-bottom: 0;
+
+		td {
+			border-width: 1px 0 0;
+			padding: 8px 14px;
+		}
+	}
+
+	.fc-event:not(.fc-list-event), .fc-event-dot, .fc-list-event-dot {
+		background-color: $primary;
+		border-color: $primary;
+
+		&.available {
+			background-color: $success;
+			border-color: darken($success, 20%);
+		}
+
+		&.unavilable {
+			background-color: $warning;
+			border-color: darken($warning, 20%);
+		}
+	}
+
+	a.fc-event, a.fc-event:hover {
+		color: $white;
+	}
+
+	.fc-event:not(.fc-list-event).fc-event-past {
+		opacity: .5;
+
+		&:hover {
+			opacity: .7;
+		}
+	}
+
+	.fc-day-other .fc-daygrid-day-top {
+		opacity: .5;
+	}
+
+	.alert-info {
+		color: $text;
+		background: $neutral-xl;
+	}
+
+	.card {
+		background: $base;
+	}
+
+	.table {
+		color: inherit;
+	}
+
+	.table td, .table th {
+		border-color: $neutral-xl;
+	}
+
+	.table-active, .table-active > td, .table-active > th {
+		background-color: lighten($neutral-xl, 5%);
+	}
+
+	@if $scheme-type == "dark" {
+		.alert-info {
+			background: $base-accent;
+		}
+
+		.card {
+			background: $base-accent;
+		}
+
+		.table td, .table th {
+			border-color: $base-accent-xxl;
+		}
+
+		.table-active, .table-active > td, .table-active > th {
+			background-color: $base-accent-l;
+		}
+	}
+
+	@media(max-width: 991px) {
+		.fc-scroller {
+			overflow: hidden !important;
+			min-height: 200px;
+		}
+	}
+
+	@media(max-width: 500px) {
+		.fc-toolbar {
+			display: block;
+
+			.fc-toolbar-chunk:last-of-type {
+				margin-top: 10px;
+
+				.btn-group {
+					float: right;
+				}
+			}
+		}
+	}
+
+	@media(max-width: 380px) {
+		.fc-list-event-time {
+			display: none;
+		}
+	}
+}

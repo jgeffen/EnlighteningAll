@@ -1,0 +1,24 @@
+/*||==========================================================||**
+**|| <---------------------- OPTIONS -----------------------> ||**
+**||==========================================================||*/
+DETAILS:	Multiple Details Can Be Added, Pass in the Title of the Detail as the $Key and the Data as the $Value
+STYLE:		standard, minimal, outlined (leave blank for standard)
+
+
+/*||==========================================================||**
+**|| <-------- RENDER CODE FOR FULL WIDTH ARTICLES ---------> ||**
+**||==========================================================||*/
+
+======= COPY AND PASTE THIS CODE TO INSERT THE COMPONENT =======
+
+<?php /* - RENDER FULL WIDTH ARTICLE COMPONENT - */ ?>	
+<?php Render::Component('articles/full-width-article/full-width-article', array(
+	'items'		=> $items,
+	'style'		=> '', //OPTIONS: standard, minimal, outlined (leave blank for standard)
+	'details'	=> array(
+		//'Posted Date: '		=> 'date', //OPTION: Pass in the title for $key and the data value for $value
+		//'Updated Date: '	=> 'updated_date'
+	)
+	
+)); ?>
+

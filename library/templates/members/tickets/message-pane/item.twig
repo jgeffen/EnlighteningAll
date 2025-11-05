@@ -1,0 +1,29 @@
+<li class="list-group-item p-2">
+    <ul class="list-unstyled">
+        <li class="media">
+            {% if direction == 'to' %}
+                <div class="mr-3 w-100" style="max-width:50px;"></div>
+
+                <div class="media-body">
+                    <p class="card-text float-right">{{ text|striptags('<br>,<strong>,<em>,<u>')|raw }}</p>
+
+                    <div class="clearfix"></div>
+
+                    <p class="card-text float-right"><small class="text-muted">{{ updated }}</small></p>
+                </div>
+
+                <img class="ml-3 img-thumbnail" src="{{ avatar }}" alt="{{ alt }}">
+            {% else %}
+                <img class="mr-3 img-thumbnail" src="/images/layout/default-avatar-xs.jpg" alt="Administrator">
+
+                <div class="media-body">
+                    <p class="card-text">{{ text|striptags('<br>,<strong>,<em>,<u>')|raw }}</p>
+
+                    <p class="card-text"><small class="text-muted">{{ updated }}</small></p>
+                </div>
+
+                <div class="ml-3 w-100" style="max-width:50px;"></div>
+            {% endif %}
+        </li>
+    </ul>
+</li>

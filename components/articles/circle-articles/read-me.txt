@@ -1,0 +1,28 @@
+/*||==========================================================||**
+**|| <------------------- REQUIREMENTS ---------------------> ||**
+**||==========================================================||*/
+IMAGE SIZE THUMB: 600 x 600px //Square crop size is preferred but not required
+
+
+/*||==========================================================||**
+**|| <---------------------- OPTIONS -----------------------> ||**
+**||==========================================================||*/
+SUB TITLE: Add the field name from the table to pass in a sub-title such as job_title or price
+
+*** This component can also be used for categories ***
+
+
+/*||==========================================================||**
+**|| <--------- RENDER CODE FOR CIRCLE ARTICLES ------------> ||**
+**||==========================================================||*/
+
+======= COPY AND PASTE THIS CODE TO INSERT THE COMPONENT =======
+
+<?php /* - RENDER CIRCLE ARTICLE COMPONENT - */ ?>
+<?php
+	Render::component('articles/circle-articles/circle-articles', array(
+		'items'		=> $items,
+		'sub_title'	=> 'job_title'
+	));
+?>
+

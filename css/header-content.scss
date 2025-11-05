@@ -1,0 +1,94 @@
+@import "/css/_variables.scss";
+
+#header-wrapper {
+	background: $base;
+	overflow: hidden;
+	
+	#header {
+		padding-top: 30px;
+		padding-bottom: 30px;
+		
+		#main-logo {
+			max-width: 100%;
+		}
+		
+		#header-contact {
+			text-align: right;
+			
+			.header-phone {
+				font-size: 22px;
+				font-weight: bold;
+				margin-bottom: 0;
+			}
+			
+			.header-email {
+				font-size: 17px;
+				margin-bottom: 0;
+			}
+			
+			@if $scheme-type == 'dark' {
+				color: $white;
+				
+				a {
+					color: $white;
+					
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+				
+				.social-links .social-btn {
+					border-color: $white;
+					
+					&:hover {
+						text-decoration: none;
+						background: rgba($white, .2);	
+					}
+				}
+			} @else if $scheme-type == 'light' {
+				color: $neutral-xxd;
+				
+				a {
+					color: $neutral-xxd;
+					
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+				
+				.social-links .social-btn {
+					border-color: $neutral-xd;
+					color: $neutral-xd;
+					
+					&:hover {
+						text-decoration: none;
+						background: rgba($neutral-d, .08);	
+					}
+				}
+			}
+		}
+		
+		#header-quote {
+			display: flex;
+			align-items: center;
+			
+			i {
+				font-size: 40px;
+				margin-right: 10px;
+				color: $accent;
+			}
+			
+			p {
+				font-size: 15px;
+				font-weight: bold;
+				font-style: italic;
+				color: darken($neutral, 5%);
+				margin-bottom: 0;
+				
+				@if $scheme-type == 'dark' {
+					color: $neutral-xl;
+				}
+			}
+		}
+	}
+}

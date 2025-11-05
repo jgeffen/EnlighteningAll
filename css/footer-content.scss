@@ -1,0 +1,62 @@
+@import "/css/_variables.scss";
+
+#footer-wrapper {
+	background: lighten($neutral-xl, 4%);
+	padding-top: 30px;
+	padding-bottom: 20px;
+	
+	hr {
+		margin: 15px 0px;
+	}
+	
+	* {
+		color: darken($neutral-xd, 5%);
+	}
+	
+	a {
+		&:hover {
+			text-decoration: underline;
+		}
+	} 
+	
+	.social-links .social-btn {
+		border-color: darken($neutral-d, 5%);
+		
+		i {
+			color: darken($neutral-d, 5%);	
+		}
+		
+		&:hover {
+			text-decoration: none;
+			background: rgba(darken($neutral-d, 5%), .08);
+		}
+	}
+	
+	@if $scheme-type == 'dark' {
+		background: $base-accent;
+		border-top: 1px solid $base-accent-xxl;
+		
+		hr {
+			border-color: $neutral-d;
+		}
+		
+		* {
+			color: $white;
+		}
+		
+		.social-links .social-btn {
+			border-color: $white;
+			
+			i {
+				color: $white;
+			}
+			
+			&:hover {
+				background: rgba($white, .15);
+			}
+		}
+	} @else if $scheme-type == 'light' {
+		background: $base-accent;
+		border-top: 1px solid $base-accent-xxd;
+	}
+}

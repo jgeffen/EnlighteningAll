@@ -1,0 +1,41 @@
+/*||==========================================================||**
+**|| <---------------------- OPTIONS -----------------------> ||**
+**||==========================================================||*/
+ENABLED: TRUE, FALSE -Turn the Alert Bar On/Off
+STICKY: TRUE, FALSE -Make the alert bar stick to the top/bottom of the page
+POSITION: top, bottom -Select if the alert bar will be positioned at the top or bottom of the page when sticky
+BACKGROUND COLOR: primary, accent, neutral, black, white, red
+TEXT COLOR: primary, accent, neutral, black, white, red
+TEXT ALIGN: left, right, center
+BUTTON TEXT: Provide text to be display in the button
+BUTTON LINK: Provide url for the button to link too
+BUTTON STYLE: primary, accent, outline, outline-white, danger
+BUTTON SIZE: small, medium, large
+MAX WIDTH: Provide px value to square up the content with a max width
+TITLE: Basic H2 tile will be output
+CONTENT: Add only paragraph text with line breaks(No HTML)
+HTML: Replace title and content with custom HTML
+
+/*||==========================================================||**
+**|| <------------------- RENDER CODE ----------------------> ||**
+**||==========================================================||*/
+
+======= COPY AND PASTE THIS CODE TO INSERT THE COMPONENT =======
+
+<?php /* - RENDER ALERT BAR COMPONENT - */ ?>
+<?php Render::static_component('alert-bar/alert-bar-standard/alert-bar-standard', array(
+	'enabled'			=>	TRUE, //OPTIONS: TRUE, FALSE -Turn the Alert Bar On/Off
+	'sticky'			=>	FALSE, //OPTIONS: TRUE, FALSE -Make the alert bar stick to the top/bottom of the page
+	'position'			=>	'top', //OPTIONS: top, bottom -Select if the alert bar will be positioned at the top or bottom of the page when sticky
+	'background_color'	=>	'primary', //OPTIONS: primary, accent, neutral, black, white, red
+	'text_color'		=>	'white', //OPTIONS: primary, accent, neutral, black, white, red
+	'text_align'		=>	'center', //OPTIONS: left, right, center
+	'btn_text'			=>	'Contact Us Today', //OPTIONS: Provide text to be display in the button
+	'btn_link'			=>	'https://www.fenclwebdesign.com/', //OPTIONS: Provide url for the button to link too
+	'btn_style'			=>	'outline-white', //OPTIONS: primary, accent, outline, outline-white, danger
+	'btn_size'			=>	'medium', //OPTIONS: small, medium, large
+	'max_width'			=>	'', //OPTIONS: Provide px value to square up the content with a max width
+	'title'				=>	'Sample Standard Alert Bar Title', //Main Title for the Alert
+	'content'			=>	'This is placeholder text, it will be removed before the website is set live. All example text will be deleted when the website is complete.',
+	'html'				=>	'' // OPTION: Replace title and content with custom HTML
+)); ?>

@@ -1,0 +1,34 @@
+/*||==========================================================||**
+**|| <---------------------- OPTIONS -----------------------> ||**
+**||==========================================================||*/
+ICON: Pass in a Font Awesome icon
+HTML: Set true if content is using HTML(TINY MCE Editor)
+COLS: Select the number of columns(1, 2, 3, 4) to be displayed, leave blank for full width
+BTN TEXT: Provide the text for the button that will be used for a link or to open a modal
+MESSAGE: Provide the message to be displayed when there are no items, leave empty for no message
+MODAL: TRUE, FALSE - Display modal with full content(Provide btn_text for modal link)
+TRUNCATE: Pass in the number of characters the text should be truncated(short description)
+
+
+/*||==========================================================||**
+**|| <------------------- RENDER CODE ----------------------> ||**
+**||==========================================================||*/
+
+======= COPY AND PASTE THIS CODE TO INSERT THE COMPONENT =======
+
+<?php /* - RENDER ONE PAGE ARTICLE COMPONENT - */ ?>
+<?php
+	Render::component('one-page-articles/titlebar-trim-article/titlebar-trim-article', array(
+		'items'      => $items,
+		'table_name' => 'faqs',
+		'title'      => 'question',
+		'icon'       => '<i class="fal fa-question-circle"></i>',
+		'text'       => 'answer',
+		'cols'       => '3', //OPTION: Select number of responsive coolumns
+		'btn_text'   => 'Read More', //OPTION: Provide text used for the click through or modal button
+		'message'    => 'Sorry, no FAQs to show at this time. Please check back soon!', //Message shown if there are no items
+		'modal'      => TRUE, //OPTION: TRUE, FALSE - Display modal with full content(Provide btn_text for modal link)
+		'html'       => FALSE,
+		'truncate'   => '300' //OPTION: Pass in the number of characters the text should be truncated(short description)
+	));
+?>

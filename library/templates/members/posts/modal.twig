@@ -1,0 +1,84 @@
+<div id="ajax-post-modal" class="modal modal-multi-column fade posts__child" tabindex="-1" data-post-id="{{ post.id }}">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable {{ post.image ? 'modal-full-screen' : '' }}">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h2 class="modal-title text-truncate">
+                    <a href="{{ post.link }}">
+                        {{ post.title }}
+                    </a>
+                </h2>
+            </div>
+
+            <div class="modal-body">
+                <div class="row no-gutters">
+                    {% if post.image is not null %}
+                        <div class="col-lg-7 col-xl-8 d-flex justify-content-center align-items-center">
+                            <img class="post-modal__img" src="{{ post.image }}">
+                        </div>
+                    {% endif %}
+
+                    <div class="col post-modal__content min-w-0">
+                        <div class="trim rounded-0 m-0">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <a href="{{ post.member.link }}">
+                                        <img class="profile-img-sm" src="{{ post.member.avatar }}">
+                                    </a>
+                                </div>
+
+                                <div class="col pl-1 min-w-0">
+                                    <h4 class="mb-0">
+                                        <a href="{{ post.member.link }}">
+                                            <b>@{{ post.member.username }}</b>
+                                        </a>
+                                    </h4>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <h4>
+                                <a href="{{ post.link }}">
+                                    <b>{{ post.title }}</b>
+                                </a>
+                            </h4>
+
+                            {{ post.content|striptags('<br>,<p>,<strong>,<em>,<u>')|raw }}
+
+                            <p><small class="text-muted">{{ post.date }}</small></p>
+
+                            <div class="post__comments">
+                                <hr>
+
+                                <ul class="list-unstyled">
+                                    {{ post.comments|raw }}
+                                </ul>
+
+                                <div class="row no-gutters align-items-center align-items-sm-end mb-3">
+                                    <div class="col-12 col-sm order-sm-2" data-tinymce="align-toolbar-last-right">
+                                        <textarea id="ajax-post-modal-textarea" class="form-control rounded" name="comment" rows="2" placeholder="Write a comment..." aria-label="Write a comment..." data-expandable></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="toolbar-footer rounded-0">
+                            {{ toolbar.like|raw }}
+
+                            <div class="toolbar__separator"></div>
+
+                            {{ toolbar.comment|raw }}
+
+                            <div class="toolbar__separator"></div>
+
+                            {{ toolbar.report|raw }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

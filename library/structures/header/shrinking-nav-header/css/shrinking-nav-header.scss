@@ -1,0 +1,325 @@
+@import "/css/_variables.scss";
+
+/*||--------------------------------------------------------||**
+**||				  <- Header Styles ->					||**
+**||--------------------------------------------------------||*/
+$header-padding-full: 35px;
+$header-padding-retracted: 17px;
+$logo-width-full: 280px;
+$logo-width-retracted: 200px;
+
+#header-spacer {
+	width: 100%;
+	background: $base;
+	@include transition(all .3s ease-in-out);
+
+	#header-wrapper {
+		position: relative;
+		top: 0;
+		left: 0;
+		z-index: 999;
+		background: $base;
+		box-shadow: 0 0 20px rgba($black, 0.06);
+		@include transition(all .3s ease-in-out);
+		
+		@if $scheme-type == 'dark' {
+			border-bottom: 1px solid $base-accent-xxl;
+		} @else if $scheme-type == 'light' {
+			border-bottom: 1px solid $base-accent-xxd;
+			box-shadow: none;
+		}
+	
+		@media(max-width: 600px) {
+			padding: 0 10px;
+		}
+		
+		#header {
+			padding-top: $header-padding-full;
+			padding-bottom: $header-padding-full;
+			@include transition(all .3s ease-in-out);
+			
+			#main-nav-logo {
+				width: 100%;
+				max-width: $logo-width-full;
+				@include transition(all .3s ease-in-out);
+				
+				@media(max-width: 350px) {
+					width: 90%;
+				}
+			}
+		}
+		
+		&.retract {
+			#header {
+				padding-top: $header-padding-retracted;
+				padding-bottom: $header-padding-retracted;
+				
+				#main-nav-logo {
+					max-width: $logo-width-retracted;
+				}
+				
+				.nav-bar-lg .dropdown > ul {
+					border-top-left-radius: 0;
+					border-top-right-radius: 0;
+				}
+			}
+		}
+		
+		&.stuck {
+			position: fixed;
+			top: 0;
+		}
+	}
+}
+
+// Disable the sticky header when sticky alert box is enabled
+#alert-bar.component-fixed.position-top + #header-spacer #header-wrapper.stuck {
+	position: relative;
+}
+#alert-bar.component-fixed.position-top + #header-spacer #header-wrapper.retract #header {
+	padding-top: $header-padding-full;
+	padding-bottom: $header-padding-full;
+	
+	#main-nav-logo {
+		max-width: $logo-width-full;	
+	}
+}
+
+
+/*||--------------------------------------------------------||**
+**||				  <- Navigation Styles ->				||**
+**||--------------------------------------------------------||*/
+#main-wrapper.noscroll {
+	@media (max-width: 1199px) {
+		position: fixed;
+		width: 100%;
+		overflow: hidden;
+	}
+}
+
+.nav-content {
+	position: relative;
+	max-width: 1000px;
+	margin: 0 auto;
+	-webkit-transform: translateZ(0);
+	
+	> ul {
+		display: flex;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		align-items: center;
+		text-align: center;
+		
+		> li {
+			flex-grow: 1;
+			position: relative;
+			margin: 0;
+			padding: 0;
+			
+			> a, > span {
+				position: relative;
+				display: block;
+				padding: 0 10px;
+				overflow: hidden;
+				color: $text;
+				background: none transparent;
+				@include transition(all .2s);
+				text-decoration: none;
+				cursor: pointer;
+				line-height: 33px;
+				text-transform: uppercase;
+				
+				i {
+					margin-left: 3px;
+				}
+			}
+			
+			&:hover > a,
+			&:hover > span,
+			&.active > a,
+			&.active > span {
+				background: lighten($neutral-xl, 5%);
+				
+				@if $scheme-type == 'dark' {
+					background: $base-accent-xl;
+				}
+			}
+			
+			&.dropdown:after {
+				display: block;
+				position: absolute;
+				bottom: -28px;
+				left: 0;
+				content: "";
+				width: 100%;
+				height: 28px;
+				cursor: pointer;
+				background: none transparent;
+				pointer-events: none;
+			}
+			
+			&.dropdown:hover:after {
+				pointer-events: all;
+			}
+			
+			&.dropdown:before {
+				content: "";
+				position: absolute;
+				bottom: -25px;
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 0 18px 15px 18px;
+				border-color: transparent transparent $primary transparent;
+				
+				@if $scheme-type == 'dark' {
+					border-color: transparent transparent $base-accent-xl transparent;
+				} @else if $scheme-type == 'light' {
+					border-color: transparent transparent $base-accent-xd transparent;
+				}
+			}
+			
+			&.dropdown:before,
+			> ul {
+				opacity: 0;
+				pointer-events: none;
+				@include transform(translateX(-50px));
+				@include transition(opacity .4s, transform 0s linear .4s);
+			}
+			
+			> ul {
+				position: absolute;
+				left: 0;
+				top: 58px;
+				background: $primary;
+				border-radius: 10px;
+				box-shadow: -5px 8px 7px -4px rgba($black, 0.15);
+				width: 245px;
+				font-size: 0;
+				text-align: left;
+				padding: 10px 0;
+				z-index: 99999;
+				overflow: hidden;
+				
+				@if $scheme-type == 'dark' {
+					background: $base-accent-xl;
+				} @else if $scheme-type == 'light' {
+					background: $base-accent-xd;
+					box-shadow: none;
+				}
+				
+				li {
+					display: block;
+					text-align: left;
+					margin-bottom: 0;
+					opacity: 0;
+					@include transform(translateX(-50px));
+					@include transition(opacity .4s, transform 0s);
+					
+					a {
+						display: block;
+						float: none;
+						padding: 8px 18px;
+						color: $white;
+						font-size: 15px;
+						line-height: 27px;
+						background: none transparent;
+						
+						@if $scheme-type == 'light' {
+							color: $text;
+						}
+						
+						&:before, &:after {
+							display: none;
+						}
+						
+						&:hover {
+							background: lighten($primary, 5%);
+							
+							@if $scheme-type == 'dark' {
+								background: $base-accent-xxl;
+							} @else if $scheme-type == 'light' {
+								background: $base-accent-xxd;
+							}
+						}
+					}
+				}
+			}
+			
+			&:first-child a i {
+				margin: 0;
+			}
+			
+			&:hover, &.active {
+				&.dropdown:before,
+				> ul {
+					@include transform(translateX(0));
+					@include transition(all .4s cubic-bezier(0.49, 0.73, 0.31, 0.98));
+					pointer-events: all;
+					opacity: 1;
+				}
+				
+				> ul li {
+					@include transform(translateX(0));
+					@include transition(all .3s cubic-bezier(0.49, 0.73, 0.2, 1.11));
+					opacity: 1;
+				}
+			}
+		}
+	}
+	
+	&.nav-bar-lg > ul > li > a {
+		border-radius: 20px;
+	}
+	
+	&.nav-bar-sm {
+		> ul {
+			justify-content: flex-end;
+			
+			> li {
+				flex-grow: 0;
+				
+				a {
+					line-height: 25px;
+					padding: 0;
+					padding-left: 20px;
+					color: $primary;
+					
+					@if $scheme-type == 'dark' {
+						color: $white;
+					} @else if $scheme-type == 'light' {
+						color: $neutral-xd;
+					}
+					
+					i {
+						opacity: .8;
+						font-size: 25px;
+					}
+					
+					@media(max-width: 600px) {
+						padding-left: 15px;
+					}
+				}
+				
+				&:hover {
+					> a {
+						background: transparent;
+						
+						i {
+							opacity: 1;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.nav-content > ul > li:last-child:after {
+	display: block;
+	clear: both;
+}

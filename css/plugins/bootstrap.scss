@@ -1,0 +1,155 @@
+.tooltip {
+	z-index: 9901;
+}
+
+.form-label-group {
+	position: relative;
+	margin-bottom: 1rem;
+
+	label {
+		height: 3.125rem;
+		padding: .75rem;
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		width: 100%;
+		margin-bottom: 0;
+		line-height: 1.5;
+		color: #495057;
+		pointer-events: none;
+		cursor: text;
+		border: 1px solid transparent;
+		border-radius: .25rem;
+		transition: all .1s ease-in-out;
+	}
+
+	input {
+		height: 3.125rem;
+		padding: .75rem;
+
+		&::-webkit-input-placeholder {
+			color: transparent;
+		}
+
+		&::-moz-placeholder {
+			color: transparent;
+		}
+
+		&::-ms-input-placeholder {
+			color: transparent;
+		}
+
+		&::placeholder {
+			color: transparent;
+		}
+
+		&:-webkit-autofill {
+			~ label {
+				padding-top: .25rem;
+				padding-bottom: .25rem;
+				font-size: 12px;
+				color: #777;
+			}
+		}
+
+		&:not(:-ms-input-placeholder) {
+			padding-top: 1.25rem;
+			padding-bottom: .25rem;
+
+			~ label {
+				padding-top: .25rem;
+				padding-bottom: .25rem;
+				font-size: 12px;
+				color: #777;
+			}
+		}
+
+		&:not(:placeholder-shown) {
+			padding-top: 1.25rem;
+			padding-bottom: .25rem;
+
+			~ label {
+				padding-top: .25rem;
+				padding-bottom: .25rem;
+				font-size: 12px;
+				color: #777;
+			}
+		}
+	}
+
+	textarea {
+		height: auto;
+		padding: .75rem;
+
+		&::-webkit-input-placeholder {
+			color: transparent;
+		}
+
+		&::-moz-placeholder {
+			color: transparent;
+		}
+
+		&::-ms-input-placeholder {
+			color: transparent;
+		}
+
+		&::placeholder {
+			color: transparent;
+		}
+
+		&:-webkit-autofill {
+			~ label {
+				padding-top: .25rem;
+				padding-bottom: .25rem;
+				font-size: 12px;
+				color: #777;
+			}
+		}
+
+		&:not(:-ms-input-placeholder) {
+			padding-top: 1.25rem;
+			padding-bottom: .25rem;
+
+			~ label {
+				padding-top: .25rem;
+				padding-bottom: .25rem;
+				font-size: 12px;
+				color: #777;
+			}
+		}
+
+		&:not(:placeholder-shown) {
+			padding-top: 1.25rem;
+			padding-bottom: .25rem;
+
+			~ label {
+				padding-top: .25rem;
+				padding-bottom: .25rem;
+				font-size: 12px;
+				color: #777;
+			}
+		}
+	}
+}
+
+/* Fallback for Edge
+-------------------------------------------------- */
+@supports (-ms-ime-align: auto) {
+	.form-label-group {
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-direction: column-reverse;
+		flex-direction: column-reverse;
+
+		label {
+			position: static;
+		}
+
+		input {
+			&::-ms-input-placeholder {
+				color: #777;
+			}
+		}
+	}
+}

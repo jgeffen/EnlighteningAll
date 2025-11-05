@@ -1,0 +1,252 @@
+@import "/css/_variables.scss";
+
+.content-breakout {
+	background-color: $primary;
+	padding: 0;
+	
+	.text-wrap {
+		padding: 70px 70px 63px;
+		
+		&:after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+		
+		&.container.no-inset-image {
+			padding-left: 30px;
+			padding-right: 30px;
+			
+			@media(max-width: 350px) {
+				padding-left: 25px;
+				padding-right: 25px;
+			}
+		}
+		
+		.breakout-title {
+			font-size: 1.5em;
+		}
+		
+		.title-super-sm,
+		.title-super-md,
+		.title-super-lg,
+		.title-super-xl {
+			margin: 0;
+		}
+		
+		p {
+			font-size: 1.1em;
+		}
+		
+		hr {
+			border-color: $neutral-xl;
+			margin: 20px 0 25px;
+		}
+		
+		@media(max-width: 991px) {
+			padding: 40px 40px 32px;
+		}
+		
+		@media(max-width: 600px) {
+			padding: 40px 30px 32px;
+		}
+		
+		&.component-text-primary {
+			* {
+				color: $primary;
+			}
+		}
+		
+		&.component-text-accent {
+			* {
+				color: $accent;
+			}
+		}
+		
+		&.component-text-neutral {
+			* {
+				color: $neutral;
+			}
+		}
+		
+		&.component-text-black {
+			* {
+				color: #444444;
+			}
+		}
+		
+		&.component-text-white {
+			* {
+				color: $white;
+			}
+		}
+	}
+	
+	.img-wrap {
+		overflow: hidden;
+		background-size: cover;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-ms-background-size: cover;
+		-o-background-size: cover;  
+		
+		@media(max-width: 1500px) {
+			background-position-x: 60%;
+		}
+		
+		@media(max-width: 991px) {
+			background-position-x: 0;
+			min-height: 500px;
+		}
+		
+		@media(max-width: 767px) {
+			min-height: 400px;
+		}
+		
+		@media(max-width: 500px) {
+			min-height: 300px;
+		}
+		
+		@media(max-width: 400px) {
+			min-height: 250px;
+		}
+	}
+	
+	.map-wrap {
+		@media(max-width: 991px) {
+			height: 350px;
+		}
+	}
+	
+	&.background-image {
+		position: relative;
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+		
+		&:before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+		
+/*
+		&.parallax,
+		&.fixed-background {
+			background-attachment: fixed;
+		}
+*/
+		
+		h2, h3, h4, h5, h6, p, ul, ol, .btn-outline-white {
+			text-shadow: 0 0 8px rgba(0,0,0,0.65), 0 0 15px rgba(0,0,0,0.5);
+		}
+		
+		&.component-background-primary {
+			&:before {
+				background: rgba($primary-d, .85);
+			}
+
+			h2, h3, h4, h5, h6, p, ul, ol, .btn-outline-white {
+				text-shadow: 0 0 8px rgba($primary-xd,0.85), 0 0 15px rgba($primary-xd,0.7);
+			}
+		}
+		
+		&.component-background-accent {			
+			&:before {
+				background: rgba($accent-d, .85);
+			}
+			
+			h2, h3, h4, h5, h6, p, ul, ol, .btn-outline-white {
+				text-shadow: 0 0 8px rgba($accent-xd,0.85), 0 0 15px rgba($accent-xd,0.7);
+			}
+		}
+		
+		&.component-background-neutral {
+			&:before {
+				background: rgba($neutral-d, .85);
+			}
+			
+			h2, h3, h4, h5, h6, p, ul, ol, .btn-outline-white {
+				text-shadow: 0 0 8px rgba($neutral-xd,0.85), 0 0 15px rgba($neutral-xd,0.7);
+			}
+		}
+		
+		&.component-background-black {
+			&:before {
+				background: rgba($black, .72);
+			}
+		}
+		
+		&.component-background-white {
+			&:before {
+				background: rgba($white, .9);
+			}
+			
+			h2, h3, h4, h5, h6, p, ul, ol, .btn-outline-white {
+				text-shadow: none;
+			}
+		}
+	}
+	
+	&.component-background-primary {
+		background-color: $primary;
+		
+		.text-wrap hr {
+			border-color: $primary-xl;
+		}
+	}
+	
+	&.component-background-accent {
+		background-color: $accent;
+		
+		.text-wrap hr {
+			border-color: $accent-xl;
+		}
+	}
+	
+	&.component-background-neutral {
+		background-color: $neutral;
+		
+		.text-wrap hr {
+			border-color: $neutral-xd;
+		}
+	}
+	
+	&.component-background-black {
+		background-color: $black;
+		
+		.text-wrap hr {
+			border-color: $neutral;
+		}
+		
+		@if $scheme-type == 'dark' {
+			background-color: $base-accent;
+			border-top: 1px solid $base-accent-xxl;
+			
+			.text-wrap hr {
+				border-color: $neutral-d;
+			}
+		}
+	}
+	
+	&.component-background-white {
+		background-color: $white;
+		
+		&:before {
+			background: rgba($white, .82);
+		}
+		
+		.text-wrap hr {
+			border-color: $neutral;
+		}
+		
+		@if $scheme-type == 'light' {
+			background-color: $base-accent;
+			border-top: 1px solid $base-accent-xxd;
+		}
+	}
+}
+

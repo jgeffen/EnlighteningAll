@@ -1,0 +1,183 @@
+/*||--------------------------------------------------------||**
+**||				  <- Site Variables ->					||**
+**||--------------------------------------------------------||*/
+
+/* ---- Color Scheme Type ---- */
+$scheme-type: 'light'; //OPTIONS: dark, light (Leave blank for standard)
+
+/* ---- Colors ---- */
+$primary: #d8bb66;
+$primary-l: lighten($primary, 10%);
+$primary-xl: lighten($primary, 20%);
+$primary-xxl: lighten($primary, 30%);
+$primary-d: darken($primary, 10%);
+$primary-xd: darken($primary, 20%);
+$primary-xxd: darken($primary, 30%);
+
+//Legacy Variables to be Replaced
+$primary_lt: lighten($primary, 10%);
+$primary_xlt: lighten($primary, 20%);
+$primary_dk: darken($primary, 10%);
+
+$accent: #000000;
+$accent-l: lighten($accent, 10%);
+$accent-xl: lighten($accent, 20%);
+$accent-xxl: lighten($accent, 30%);
+$accent-d: darken($accent, 10%);
+$accent-xd: darken($accent, 20%);
+$accent-xxd: darken($accent, 30%);
+
+$neutral: #f0f4f5;
+@if $scheme-type == 'dark' {
+	$neutral: #f0f4f5;
+}
+
+$neutral-l: lighten($neutral, 10%);
+$neutral-xl: lighten($neutral, 20%);
+$neutral-xxl: lighten($neutral, 30%);
+$neutral-d: darken($neutral, 10%);
+$neutral-xd: darken($neutral, 20%);
+$neutral-xxd: darken($neutral, 30%);
+
+$text: #333;
+$base: #fff;
+$base-accent: $neutral-xxl;
+$base-accent-l: lighten($base-accent, 4%);
+$base-accent-xl: lighten($base-accent, 8%);
+$base-accent-xxl: lighten($base-accent, 12%);
+$base-accent-d: darken($base-accent, 3%);
+$base-accent-xd: darken($base-accent, 7%);
+$base-accent-xxd: darken($base-accent, 12%);
+
+@if $scheme-type == 'dark' {
+	$base: #000;
+	$base-accent: #171717;
+	$base-accent-l: lighten($base-accent, 4%);
+	$base-accent-xl: lighten($base-accent, 8%);
+	$base-accent-xxl: lighten($base-accent, 12%);
+	$base-accent-d: darken($base-accent, 3%);
+	$base-accent-xd: darken($base-accent, 7%);
+	$base-accent-xxd: darken($base-accent, 12%);
+	$text: #fff;
+} @else if $scheme-type == 'light' {
+	$base-accent: $neutral-xxl;
+	$base-accent-l: lighten($base-accent, 4%);
+	$base-accent-xl: lighten($base-accent, 8%);
+	$base-accent-xxl: lighten($base-accent, 12%);
+	$base-accent-d: darken($base-accent, 3%);
+	$base-accent-xd: darken($base-accent, 7%);
+	$base-accent-xxd: darken($base-accent, 12%);
+}
+
+$black: #333;
+$black_lt: #4e4e4e;
+$black_xlt: lighten($black_lt, 15%);
+$black_dk: #252525;
+$white: #fff;
+$alert: #da0000;
+$success: #109a09;
+
+$module_radius_sm: 5px;
+$module_radius: 10px;
+
+
+/*||--------------------------------------------------------||**
+**||				 	 <- Mixins ->						||**
+**||--------------------------------------------------------||*/
+
+@mixin linear-gradient($direction, $color-stops...) {
+	background: nth(nth($color-stops, 1), 1);
+	background: -webkit-linear-gradient($direction, $color-stops);
+	background: -moz-linear-gradient($direction, $color-stops);
+	background: -ms-linear-gradient($direction, $color-stops);
+	background: -o-linear-gradient($direction, $color-stops);
+	background: linear-gradient($direction, $color-stops);
+}
+
+@mixin transition($string...) {
+	-webkit-transition: $string;
+	-moz-transition: $string;
+	-ms-transition: $string;
+	-o-transition: $string;
+	transition: $string;
+}
+
+@mixin transition-delay($string) {
+	-webkit-transition-delay: $string;
+	-moz-transition-delay: $string;
+	-ms-transition-delay: $string;
+	-o-transition-delay: $string;
+	transition-delay: $string;
+}
+
+@mixin transform-origin($transform-origins...) {
+	-webkit-transform-origin: $transform-origins;
+	-moz-transform-origin: $transform-origins;
+	-ms-transform-origin: $transform-origins;
+	-o-transform-origin: $transform-origins;
+	transform-origin: $transform-origins;
+}
+
+@mixin transform($string) {
+	-webkit-transform: $string;
+	-moz-transform: $string;
+	-ms-transform: $string;
+	-o-transform: $string;
+	transform: $string;
+}
+
+@mixin perspective-origin($perspective-origins...) {
+	-webkit-perspective-origin: $perspective-origins;
+	-moz-perspective-origin: $perspective-origins;
+	-ms-perspective-origin: $perspective-origins;
+	-o-perspective-origin: $perspective-origins;
+	perspective-origin: $perspective-origins;
+}
+
+@mixin perspective($perspectives...) {
+	-webkit-perspective: $perspectives;
+	-moz-perspective: $perspectives;
+	-ms-perspective: $perspectives;
+	-o-perspective: $perspectives;
+	perspective: $perspectives;
+}
+
+@mixin keyframes($animation-name) {
+	@-webkit-keyframes #{$animation-name} {
+		@content;
+	}
+	@-moz-keyframes #{$animation-name} {
+		@content;
+	}
+	@-ms-keyframes #{$animation-name} {
+		@content;
+	}
+	@-o-keyframes #{$animation-name} {
+		@content;
+	}
+	@keyframes #{$animation-name} {
+		@content;
+	}
+}
+
+@mixin animation($str) {
+	-webkit-animation: #{$str};
+	-moz-animation: #{$str};
+	-ms-animation: #{$str};
+	-o-animation: #{$str};
+	animation: #{$str};
+}
+
+/* Example usage
+@include keyframes(slide-down) {
+	0% { opacity: 1; }
+	90% { opacity: 0; }
+}
+
+.element {
+	width: 100px;
+	height: 100px;
+	background: black;
+	@include animation('slide-down 5s 3');
+}
+*/

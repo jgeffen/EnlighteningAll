@@ -1,0 +1,32 @@
+<h1 style="text-align:center">Order Success</h1>
+
+<h2>Sale Details</h2>
+<p>Invoice: {{ sale.invoice }}</p>
+<p>Amount: {{ sale.amount }}</p>
+<p>Account: {{ sale.account }}</p>
+<p>Tip: {{ sale.is_tip }}</p>
+<p>Tip For: {{ sale.staff_member }}</p>
+
+<br>
+
+<h2>Billing Details</h2>
+<p>Name: {{ billing.name }}</p>
+<p>Phone: {{ billing.phone }}</p>
+<p>Email: {{ billing.email }}</p>
+<p>Address Line 1: {{ billing.address_line_1 }}</p>
+<p>Address Line 2: {{ billing.address_line_2 }}</p>
+<p>City: {{ billing.city }}</p>
+<p>State: {{ billing.state }}</p>
+<p>Country: {{ billing.country }}</p>
+<p>Zip Code: {{ billing.zip_code }}</p>
+
+<br>
+
+<h2>Product</h2>
+<p>Product: {{ product.label }}</p>
+<p>Product ID: {{ product.id }}</p>
+<p>Quantity: {{ product.quantity }}</p>
+
+<br>
+
+<p><b>Comments:</b> {{ comments }}</p>

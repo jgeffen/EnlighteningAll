@@ -1,0 +1,9 @@
+{% set classes = [
+    active ? 'toolbar__btn-active' : '',
+    collapse ? 'toolbar__btn-collapse' : ''
+] %}
+
+<button class="toolbar__btn toolbar__btn-comment {{ classes|filter(v => v is not empty)|join(' ') }}" type="button" data-post-action="{{ action }}" data-scroll-to="{{ scrollable ?? false }}">
+    <i class="far fa-comment mr-2"></i>
+    <span class="toolbar__btn-count">{{ count ?: '' }}</span>
+</button>

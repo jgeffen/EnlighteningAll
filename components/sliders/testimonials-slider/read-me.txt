@@ -1,0 +1,30 @@
+/*||==========================================================||**
+**|| <------------------- REQUIREMENTS ---------------------> ||**
+**||==========================================================||*/
+REQUIRES: Swiper Jquery Pluggin
+
+/*||==========================================================||**
+**|| <--------------------- OPTIONS ------------------------> ||**
+**||==========================================================||*/
+TABLE NAME: Add the table name of the slider
+BACKGROUND COLOR: primary, accent, neutral, black, white
+TEXT COLOR: primary, accent, neutral, black, white
+BUTTON: primary, accent, outline, outline-white
+
+/*||==========================================================||**
+**|| <------------------- RENDER CODE ----------------------> ||**
+**||==========================================================||*/
+
+======= COPY AND PASTE THIS CODE TO INSERT THE COMPONENT =======
+
+<?php /* - RENDER TESTIMONIALS SLIDER COMPONENT - */ ?>
+<?php
+	Render::component('sliders/testimonials-slider/testimonials-slider', array(
+		'set_table'			=> $table = 'testimonials', //OPTION: SET THE TABLE NAME TO CHOOSE THE SLIDER
+		'data'				=> (new DatabaseHandler())->fetchAll("SELECT * FROM `$table` WHERE `status` = 'enabled' ORDER BY `position`, `timestamp` DESC LIMIT 10"),
+		'table'     		=> $table,
+		'background_color'	=> 'primary', //OPTIONS: primary, accent, neutral, black, white
+		'text_color'		=> 'white', //OPTIONS: primary, accent, neutral, black, white
+		'button'			=> 'outline-white' //OPTIONS: primary, accent, outline, outline-white
+	));
+?>

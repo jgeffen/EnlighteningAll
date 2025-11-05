@@ -1,0 +1,105 @@
+@include keyframes(infiniteRotate) {
+	0% {
+		transform: rotateZ(0);
+	}
+	100% {
+		transform: rotateZ(360deg);
+	}
+}
+
+.fade-up {
+	@include transform(translateY(20px));
+	opacity: 0;
+	@include transition(all .5s);
+	&.reached {
+		@include transform(translateY(0));
+		opacity: 1;
+	}
+}
+
+.fade-in-left {
+	@include transform(translateX(-1000px));
+	opacity: 0;
+	@include transition(all .5s);
+	&.reached {
+		@include transform(translateX(0));
+		opacity: 1;
+	}
+}
+
+.fade-in-right {
+	@include transform(translateX(1000px));
+	opacity: 0;
+	@include transition(all .5s);
+	&.reached {
+		@include transform(translateX(0));
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes flashing {
+	0% {
+		opacity: 0;
+	}
+	25% {
+		opacity: 1;
+	}
+	75% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@-moz-keyframes flashing {
+	0% {
+		opacity: 0;
+	}
+	25% {
+		opacity: 1;
+	}
+	75% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@-ms-keyframes flashing {
+	0% {
+		opacity: 0;
+	}
+	25% {
+		opacity: 1;
+	}
+	75% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes flashing {
+	0% {
+		opacity: 0;
+	}
+	25% {
+		opacity: 1;
+	}
+	75% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+.flashing {
+	-webkit-animation: flashing 2.2s infinite ease-in-out;
+	-moz-animation: flashing 2.2s infinite ease-in-out;
+	-ms-animation: flashing 2.2s infinite ease-in-out;
+	animation: flashing 2.2s infinite ease-in-out;
+}

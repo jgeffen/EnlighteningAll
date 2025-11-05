@@ -1,0 +1,11 @@
+{% if rsvp is not empty %}
+    <a href="{{ link }}" target="_blank">
+        {% if rsvp.item_count_total > 1 %}
+            {{ rsvp.item_count_total }} Passes
+        {% else %}
+            {{ rsvp.item_count_total }} Pass
+        {% endif %}
+    </a>
+{% else %}
+    No
+{% endif %}

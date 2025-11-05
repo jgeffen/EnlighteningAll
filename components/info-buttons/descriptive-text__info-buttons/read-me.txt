@@ -1,0 +1,57 @@
+/*||==========================================================||**
+**|| <------------------- REQUIREMENTS ---------------------> ||**
+**||==========================================================||*/
+IMAGE SIZE: 600 x 400px
+
+
+/*||==========================================================||**
+**|| <--------------------- OPTIONS ------------------------> ||**
+**||==========================================================||*/
+LONGER TITLES: TRUE, FALSE - Set to TRUE if the titles are longer than 1-2 short words or if using icons
+ICON: Provide Font Awesome Icon HTML, these are optional and can be left blank for no icon layout
+
+
+/*||==========================================================||**
+**|| <------------------- RENDER CODE ----------------------> ||**
+**||==========================================================||*/
+
+======= COPY AND PASTE THIS CODE TO INSERT THE COMPONENT =======
+
+<?php /* - RENDER DESCRIPTIVE TEXT INFO BUTTONS COMPONENT - */ ?>
+<?php Render::static_component('info-buttons/descriptive-text__info-buttons/descriptive-text__info-buttons--component', array(
+	'longer-titles'	=> false, //Set to TRUE if the titles are longer than 1-2 short words or if using icons
+	'data'			=> array(
+		array(
+			'image'		=> '/images/samples/info-buttons/600x400/button-1.jpg', //REQUIRED: 600x400px
+			'icon'		=> '<i class="fal fa-user-chart"></i>', //Optional, leave blank for no icons
+			'alt'		=> 'Sample Alt Text',
+			'title'		=> 'Services',
+			'text'		=> 'This is placeholder text, it will be removed before the website is set live. All example text will be deleted when the website is complete.',
+			'link'		=> '/services.php'
+		),
+		array(
+			'image'		=> '/images/samples/info-buttons/600x400/button-2.jpg', //REQUIRED: 600x400px
+			'icon'		=> '<i class="fal fa-box-full"></i>', //Optional, leave blank for no icons
+			'alt'		=> 'Sample Alt Text',
+			'title'		=> 'Products',
+			'text'		=> 'This is placeholder text, it will be removed before the website is set live. All example text will be deleted when the website is complete.',
+			'link'		=> '/products.php'
+		),
+		array(
+			'image'		=> '/images/samples/info-buttons/600x400/button-3.jpg', //REQUIRED: 600x400px
+			'icon'		=> '<i class="fal fa-calendar-week"></i>', //Optional, leave blank for no icons
+			'alt'		=> 'Sample Alt Text',
+			'title'		=> 'Events',
+			'text'		=> 'This is placeholder text, it will be removed before the website is set live. All example text will be deleted when the website is complete.',
+			'link'		=> '/events.php'
+		),
+		array(
+			'image'		=> '/images/samples/info-buttons/600x400/button-4.jpg', //REQUIRED: 600x400px
+			'icon'		=> '<i class="fal fa-envelope"></i>', //Optional, leave blank for no icons
+			'alt'		=> 'Sample Alt Text',
+			'title'		=> 'Contact Us',
+			'text'		=> 'This is placeholder text, it will be removed before the website is set live. All example text will be deleted when the website is complete.',
+			'link'		=> '/contact.php'
+		)
+	)
+)); ?>

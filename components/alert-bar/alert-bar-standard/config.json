@@ -1,0 +1,14 @@
+{
+    "version": "v1.0",
+    "title": "Standard Alert Bar",
+    "content": "read-me.txt",
+    "enabled": "true",
+    "gallery": {
+        "main": "example.png"
+    },
+    "dependencies": {
+        "core": {
+            "css":"alert-bar-standard.scss"
+        }
+    }
+}

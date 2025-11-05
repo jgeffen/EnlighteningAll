@@ -1,0 +1,35 @@
+/*||==========================================================||**
+**|| <------------------- REQUIREMENTS ---------------------> ||**
+**||==========================================================||*/
+IMAGE SIZE: 600 x 600px
+
+
+/*||==========================================================||**
+**|| <------------------- RENDER CODE ----------------------> ||**
+**||==========================================================||*/
+
+======= COPY AND PASTE THIS CODE TO INSERT THE COMPONENT =======
+
+<?php /* - RENDER CIRCLE INFO BUTTONS COMPONENT - */ ?>
+<?php Render::static_component('info-buttons/circle-info-buttons/circle-info-buttons', array(
+	array(
+		'image' => '/images/samples/info-buttons/button-1.jpg', //REQUIRED: 600x400px
+		'title' => 'Services',
+		'link'  => '/services'
+	),
+	array(
+		'image' => '/images/samples/info-buttons/button-2.jpg', //REQUIRED: 600x400px
+		'title' => 'Products',
+		'link'  => '/products'
+	),
+	array(
+		'image' => '/images/samples/info-buttons/button-3.jpg', //REQUIRED: 600x400px
+		'title' => 'Events',
+		'link'  => '/events'
+	),
+	array(
+		'image' => '/images/samples/info-buttons/button-4.jpg', //REQUIRED: 600x400px
+		'title' => 'Contact Us',
+		'link'  => '/contact'
+	)
+)); ?>

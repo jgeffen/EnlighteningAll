@@ -1,0 +1,62 @@
+RewriteEngine on
+
+# Force Domain
+RewriteCond %{HTTP_HOST} !^enlighteningall\.com$ [NC]
+RewriteRule ^(.*) https://new.enlighteningall.com/$1 [R=301,L]
+
+# HTTP BASIC AUTH #
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+# Combine Assets
+RewriteRule ^css/styles-([a-z]+)\.min\.css	/css/styles-$1.php	[L]
+RewriteRule ^js/scripts-([a-z]+)\.min\.js	/js/scripts-$1.php	[L]
+
+# Force Non-Trailing Slash
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+# Bypass Assets
+RewriteRule ^(css|files|fonts|images|js)($|/) - [L]
+
+# Router
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule .* /index.php [L]
+
+# Custom Error Documents
+ErrorDocument 404 /show_error.php?status_code=404
+ErrorDocument 500 /show_error.php?status_code=500
+
+# Cache Policy
+<IfModule mod_expires.c>
+	# Activate
+	ExpiresActive On
+
+	# Images
+	ExpiresByType image/jpeg "access plus 1 year"
+	ExpiresByType image/gif "access plus 1 year"
+	ExpiresByType image/png "access plus 1 year"
+	ExpiresByType image/webp "access plus 1 year"
+	ExpiresByType image/svg+xml "access plus 1 year"
+	ExpiresByType image/x-icon "access plus 1 year"
+
+	# Video
+	ExpiresByType video/webm "access plus 1 year"
+	ExpiresByType video/mp4 "access plus 1 year"
+	ExpiresByType video/mpeg "access plus 1 year"
+
+	# Fonts
+	ExpiresByType font/ttf "access plus 1 year"
+	ExpiresByType font/otf "access plus 1 year"
+	ExpiresByType font/woff "access plus 1 year"
+	ExpiresByType font/woff2 "access plus 1 year"
+	ExpiresByType application/font-woff "access plus 1 year"
+
+	# CSS, JavaScript
+	ExpiresByType text/css "access plus 1 month"
+	ExpiresByType text/javascript "access plus 1 month"
+	ExpiresByType application/javascript "access plus 1 month"
+
+	# Others
+	ExpiresByType application/pdf "access plus 1 month"
+	ExpiresByType image/vnd.microsoft.icon "access plus 1 year"
+</IfModule>

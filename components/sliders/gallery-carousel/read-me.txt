@@ -1,0 +1,29 @@
+/*||==========================================================||**
+**|| <------------------- REQUIREMENTS ---------------------> ||**
+**||==========================================================||*/
+REQUIRES: Swiper Jquery Pluggin
+IMAGE SIZE: 800 x 533px
+THUMBNAIL SIZE: 450 x 300px
+
+/*||==========================================================||**
+**|| <--------------------- OPTIONS ------------------------> ||**
+**||==========================================================||*/
+MAIN IMAGE: Pass in the main image for the article page
+GALLERY IMAGES: Pass in the gallery images
+MARGIN: Use Bootstrap margin utility classes (ex: mt-2 mb-3), Only works if INSET is set to FALSE
+INSET: TRUE, FALSE - Setting TRUE will float the carousel next to the content (selecting an INSET POSITION is required for INSET to function)
+INSET POSITION: right, left - Select which side the carousel will sit when inset (selecting an INSET POSITION is required for INSET to function)
+
+/*||==========================================================||**
+**|| <------------------- RENDER CODE ----------------------> ||**
+**||==========================================================||*/
+
+======= COPY AND PASTE THIS CODE TO INSERT THE COMPONENT =======
+
+<?php /* - RENDER GALLERY CAROUSEL COMPONENT - */ ?>
+<?php Render::Component('sliders/gallery-carousel/gallery-carousel', array(
+	'item'				=> $item,  // OPTIONS: BlogStyle Item
+	'margin'			=> '',     // OPTIONS: Use Bootstrap margin utility classes (ex: mt-2 mb-3), Only works if INSET is set to FALSE
+	'inset'				=> TRUE,   // OPTIONS: TRUE, FALSE - Setting TRUE will float the carousel next to the content
+	'inset_position'	=> 'right' // OPTIONS: right, left - Select which side the carousel will sit when inset
+)); ?>

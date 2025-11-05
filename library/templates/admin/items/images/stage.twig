@@ -1,0 +1,41 @@
+<div
+        id="image-cropper-wrapper-{{ item.id }}"
+        class="col col-mb sortable-item"
+        data-item="{{ item|json_encode(constant('JSON_HEX_QUOT')) }}"
+        data-cropper-aspect="{{ image.aspect }}"
+        data-cropper-format="{{ image.format|json_encode() }}"
+        data-cropper-source="{{ image.source }}"
+        data-cropper-type="{{ image.type }}"
+        data-sortablejs="child"
+        data-sortablejs-id="{{ item.id }}">
+
+    <div class="rounded shadow overflow-hidden" data-published="{{ item.published ? 1 : 0 }}">
+        <div class="sortable-item__handler">
+            <img class="img-fluid mb-0 lazy" src="/images/layout/default-landscape.jpg" data-src="{{ image.thumb }}">
+        </div>
+
+        <div class="toolbar-footer mx-auto" style="max-width: 900px;">
+            <button class="toolbar__btn" type="button" data-action="view">
+                <i class="far fa-search-plus"></i>
+            </button>
+
+            <div class="toolbar__separator"></div>
+
+            <button class="toolbar__btn" type="button" data-cropper-action="crop">
+                <i class="far fa-crop"></i>
+            </button>
+
+            <div class="toolbar__separator"></div>
+
+            <button class="toolbar__btn" type="button" data-action="edit">
+                <i class="far fa-edit"></i>
+            </button>
+
+            <div class="toolbar__separator"></div>
+
+            <button class="toolbar__btn" type="button" data-action="delete">
+                <i class="far fa-trash"></i>
+            </button>
+        </div>
+    </div>
+</div>

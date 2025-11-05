@@ -1,0 +1,97 @@
+<div class="btn-group" data-member-id="{{ id }}">
+    <button type="button" class="btn btn-secondary btn-sm dropdown-toggle text-nowrap" data-toggle="dropdown" aria-expanded="false">
+        Options
+    </button>
+
+    <div class="dropdown-menu dropdown-menu-right">
+        <h6 class="dropdown-header">Actions</h6>
+
+        <a class="dropdown-item" href="#" data-action="view-profile">
+            <i class="fa-light fa-face-viewfinder fa-fw"></i> View Profile
+        </a>
+
+        <a class="dropdown-item disabled" href="#">
+            <i class="fa-light fa-messages fa-fw"></i> View Messages
+        </a>
+
+        <a class="dropdown-item" href="/user/view/member-posts/{{ id }}">
+            <i class="fa-light fa-address-card fa-fw"></i> View Posts
+        </a>
+
+        <a class="dropdown-item" href="/user/view/member-logs/{{ id }}">
+            <i class="fa-light fa-books fa-fw"></i> View Logs
+        </a>
+
+        <div class="dropdown-divider"></div>
+
+        <h6 class="dropdown-header">Account</h6>
+
+        <a class="dropdown-item {{ not flags.admin ? 'disabled' }}" href="#" data-action="access">
+            <i class="fa-light fa-arrow-right-to-bracket fa-fw"></i> Access Account
+        </a>
+
+        <a class="dropdown-item" href="/user/edit/members/{{ id }}">
+            <i class="fa-light fa-pencil fa-fw"></i> Edit Account
+        </a>
+
+        <a class="dropdown-item" href="#" data-action="toggle" data-field="is_banned">
+            {% if not flags.banned %}
+                <i class="fa-light fa-ban fa-fw"></i> Ban Account
+            {% else %}
+                <i class="fa-light fa-circle-check fa-fw"></i> Unban Account
+            {% endif %}
+        </a>
+
+        <div class="dropdown-divider"></div>
+
+        <h6 class="dropdown-header">Toggles</h6>
+
+        {% if not flags.approved %}
+            <a class="dropdown-item" href="#" data-action="account-approval" data-activation-code>
+                <i class="fa-light fa-circle-check fa-fw"></i> Approve Account
+            </a>
+        {% endif %}
+
+        <a class="dropdown-item" href="#" data-action="toggle" data-field="is_verified">
+            {% if not flags.verified %}
+                <i class="fa-light fa-circle-check fa-fw"></i> Verify Email
+            {% else %}
+                <i class="fa-light fa-circle-x fa-fw"></i> Unverify Email
+            {% endif %}
+        </a>
+
+        <a class="dropdown-item" href="#" data-action="toggle" data-field="is_teacher_approved">
+            {% if not flags.teacher_approved %}
+                <i class="fa-light fa-circle-check fa-fw"></i> Approve Teacher Account
+            {% else %}
+                <i class="fa-light fa-circle-x fa-fw"></i> Unapprove Teacher Account
+            {% endif %}
+        </a>
+
+        <a class="dropdown-item" href="#" data-action="toggle" data-field="is_staff">
+            {% if not flags.is_staff %}
+                <i class="fa-light fa-circle-check fa-fw"></i> Staff Member
+            {% else %}
+                <i class="fa-light fa-circle-x fa-fw"></i> Remove Staff Member
+            {% endif %}
+        </a>
+
+        <div class="dropdown-divider"></div>
+
+        <h6 class="dropdown-header">Special</h6>
+
+        <a class="dropdown-item {{ flags.subscribed or not flags.admin ? 'disabled' }}" href="#" data-action="compensate">
+            <i class="fa-light fa-gift fa-fw"></i> Gift Subscription
+        </a>
+
+        <a class="dropdown-item {{ not flags.admin ? 'disabled' }}" href="#" data-action="deactivate">
+            <i class="fa-light fa-skull fa-fw"></i> Deactivate
+        </a>
+
+        {% if flags.subscribed %}
+            <a class="dropdown-item {{ flags.free_drink or not flags.admin ? 'disabled' }}" href="#" data-action="free_drink">
+                <i class="fa-light fa-martini-glass-citrus fa-fw"></i> Issue Free Drink
+            </a>
+        {% endif %}
+    </div>
+</div>

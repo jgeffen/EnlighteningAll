@@ -1,0 +1,24 @@
+{
+	"constants" : {
+		"dev_email"             : "jon@fencl.org",
+		"dev_from"              : "error@fencl.org",
+		"dev_subj"              : "Error - EnlighteningAll.com",
+		"ftp_user"              : "nghtngall_ftp4747",
+		"site_company_dba"      : "Fencl Web Design DBA Enlightening All™",
+		"site_company"          : "ENLIGHTENING ALL™",
+		"site_name"             : "EnlighteningAll.com",
+		"site_url"              : "https://enlighteningall.com",
+		"site_email"            : "info@enlighteningall.com",
+		"site_phone"            : "1-888-793-2776",
+		"site_address"          : "1272 Sarno Rd.",
+		"site_city"             : "Melbourne",
+		"site_state"            : "FL",
+		"site_zip"              : "32935",
+		"google_analytics_code" : null
+	},
+	"system"    : {
+		"locale"   : "en_US.UTF-8",
+		"mode"     : "development",
+		"timezone" : "America/New_York"
+	}
+}

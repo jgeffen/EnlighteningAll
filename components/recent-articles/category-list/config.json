@@ -1,0 +1,14 @@
+{
+    "version": "v1.0",
+    "title": "Category List",
+    "content": "read-me.txt",
+    "enabled": "true",
+    "gallery": {
+        "main": "example.png"
+    },
+    "dependencies": {
+        "core": {
+            "css":"category-list.scss"
+        }
+    }
+}

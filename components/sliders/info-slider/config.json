@@ -1,0 +1,21 @@
+{
+    "version": "v1.0",
+    "title": "Info Slider",
+    "content": "read-me.txt",
+    "enabled": "true",
+    "gallery": {
+        "main": "example.png",
+        "1":"/examples/example-1.jpg",
+        "2":"/examples/example-2.jpg",
+        "3":"/examples/example-3.jpg",        
+        "4":"/examples/example-4.jpg",
+        "5": "/examples/example-5.jpg",
+        "6": "/examples/example-6.jpg"
+    },
+    "dependencies": {
+        "core": {
+            "css":"info-slider.scss",
+            "js": "info-slider.js"
+        }
+    }
+}

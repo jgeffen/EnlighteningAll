@@ -1,0 +1,17 @@
+{
+    "version": "v1.0",
+    "title": "Image Card Article",
+    "content": "read-me.txt",
+    "enabled": "true",
+    "gallery": {
+        "main": "example.png",
+        "1": "/examples/example.jpg",
+        "2": "/examples/example-featured.jpg",
+        "3": "/examples/example-featured.png"
+    },
+    "dependencies": {
+        "core": {
+            "css":"image-card-article.scss"
+        }
+    }
+}

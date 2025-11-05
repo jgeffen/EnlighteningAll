@@ -1,0 +1,45 @@
+// Media Queries
+$phone: "(max-width: 479px)";
+$phoneandup: "(min-width: 480px)";
+$tablet: "(min-width: 480px) and (max-width: 767px)";
+$tabletanddown: "(max-width: 767px)";
+$tabletandup: "(min-width: 768px)";
+$laptop: "(min-width: 768px) and (max-width: 991px)";
+$laptopanddown: "(max-width: 991px)";
+$laptopandup: "(min-width: 992px)";
+$desktop: "(min-width: 992px)";
+$desktopanddown: "(max-width: 991px)";
+$desktopandup: "(min-width: 1280px)";
+$largedesktop: "(min-width: 1679px)";
+
+// colors
+$white: #fff;
+$black: #000;
+$gray: #7f7f7f;
+$darkgray: darken($gray, 10%);
+$medgray: lighten($gray, 25%);
+$ltgray: lighten($gray, 60%);
+
+$blue: #1040a7;
+$brightblue: adjust-hue(lighten(saturate($blue, 30%), 10%), -10%);
+
+$red: #CE0000;
+$yellow: #f1920b;
+$orange: #dd8c00;
+$green: #1ea729;
+
+// social network colors
+$fbcolor: #3b5998;
+$twittercolor: #55acee;
+$gpluscolor: #dc4e41;
+$youtubecolor: #cd201f;
+$pinterestcolor: #bd081c;
+$linkedincolor: #0077b5;
+$instagramcolor: #3f729b;
+
+// Status Colors
+$primary: $blue;
+$info: $brightblue;
+$warning: $orange;
+$danger: $red;
+$success: $green;

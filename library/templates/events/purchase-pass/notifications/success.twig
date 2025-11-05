@@ -1,0 +1,37 @@
+<h1 style="text-align:center">Order Success</h1>
+
+<h2>Sale Details</h2>
+<p>Invoice: {{ sale.invoice }}</p>
+<p>Amount: {{ sale.amount }}</p>
+<p>Account: {{ sale.account }}</p>
+
+<br>
+
+<h2>Billing Details</h2>
+<p>Name: {{ billing.name }}</p>
+<p>Phone: {{ billing.phone }}</p>
+<p>Email: {{ billing.email }}</p>
+<p>Address Line 1: {{ billing.address_line_1 }}</p>
+<p>Address Line 2: {{ billing.address_line_2 }}</p>
+<p>City: {{ billing.city }}</p>
+<p>State: {{ billing.state }}</p>
+<p>Country: {{ billing.country }}</p>
+<p>Zip Code: {{ billing.zip_code }}</p>
+
+<br>
+
+<h2>Event Pass</h2>
+<p>Event: {{ event.heading }}</p>
+<p>Event Date: {{ event.date }}</p>
+<p>Name on Pass: {{ event.name_on_pass }}</p>
+<ol>
+    {% for package in event.packages %}
+        <li value="{{ package.quantity }}">
+            {{ package.text }}
+        </li>
+    {% endfor %}
+</ol>
+
+<br>
+
+<p><b>Comments:</b> {{ comments }}</p>

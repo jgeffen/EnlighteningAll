@@ -1,0 +1,30 @@
+<div class="card p-0" data-member-id="{{ contact.id }}">
+    <div class="card-body">
+        <ul class="list-group list-group-flush"></ul>
+    </div>
+	
+    
+
+
+    <div class="card-footer p-0" data-tinymce="align-toolbar-last-right no-border">
+	{% if isPaid  %}
+        <textarea id="message-pane-textarea" class="form-control" name="message" placeholder="Type your message..." aria-label="Type your message..."></textarea>
+		{% else %}
+		<div class="dropdown " style="font-size: x-large;">
+											<a href="#" class="toolbar__btn toolbar__btn-report" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" rel="tooltip-message">
+												<i class="fas fa-comment-alt-lines"></i>
+											</a>
+
+											<div class="dropdown-menu">
+												<h6 class="dropdown-header text-center py-0">Default Message</h6>
+												<div class="dropdown-divider"></div>
+												    {% for val in default_message %}
+														<a class="dropdown-item" href="#"  onClick="sendDefaultMessage({{ contact.id }}, '{{ val.message }}')">{{ val.message }}</a>
+													{% endfor %}
+													<a class="dropdown-item" href="#" data-custom-message-action="custom-message-suggestion" data-type="Abusive Language">Custom Message</a>
+												
+											</div>
+										</div>
+		{% endif %}
+    </div>
+</div>

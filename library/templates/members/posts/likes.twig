@@ -1,0 +1,27 @@
+<div id="ajax-likes-modal" class="modal" tabindex="-1">
+    <div class="modal-dialog modal-sm modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+                <ul class="list-unstyled">
+                    {% for member in members %}
+                        <li class="media align-items-center">
+                            <a href="{{ member.link }}">
+                                <img class="profile-img-xs mr-2" src="{{ member.avatar }}" alt="{{ member.alt }}">
+                            </a>
+
+                            <div class="media-body">
+                                <a href="{{ member.link }}">
+                                    <h5>{{ member.username }}</h5>
+                                </a>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

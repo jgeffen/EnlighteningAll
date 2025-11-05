@@ -1,0 +1,17 @@
+{
+    "version": "v1.0",
+    "title": "Content Breakout",
+    "content": "read-me.txt",
+    "enabled": "true",
+    "gallery": {
+        "main": "example.png",
+        "1": "/examples/example.png",
+        "2": "/examples/example-background-image-custom-html.jpg",
+        "3": "/examples/example-map.jpg"
+    },
+    "dependencies": {
+        "core": {
+            "css":"content-breakout.scss"
+        }
+    }
+}

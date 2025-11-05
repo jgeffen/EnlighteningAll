@@ -1,0 +1,259 @@
+@import "/css/_variables.scss";
+
+#main-wrapper.noscroll {
+	@media (max-width: $mobile-nav-break) {
+		position: fixed;
+		width: 100%;
+		overflow: hidden;
+	}
+}
+
+#nav-top {
+	position: relative;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+#nav-wrapper {
+	position: relative;
+	width: 100%;
+	z-index: 1001;
+	padding: 0;
+	background: $base;
+	box-shadow: 0 0 20px rgba($black, 0.06);
+	-webkit-transform: translateZ(0);
+	
+	@if $scheme-type == 'dark' {
+		background: $base-accent;
+		border-top: 1px solid $base-accent-xxl;
+		border-bottom: 1px solid $base-accent-xxl;
+	} @else if $scheme-type == 'light' {
+		background: $base-accent;
+		border-top: 1px solid $base-accent-xxd;
+		border-bottom: 1px solid $base-accent-xxd;
+		box-shadow: none;
+	}
+	
+	#nav-icon {
+		opacity: 0;
+		pointer-events: none;
+		
+		img {
+			width: 38px;
+		}
+	}
+	
+	&.stuck {
+		position: fixed;
+		top: 0;
+		
+		#nav-icon {
+			opacity: 1;
+			pointer-events: all;
+		}
+	}
+}
+	
+.nav-content {
+	//max-width: 1000px;
+	margin: 0 auto;
+	z-index: 999;
+	height: 56px;
+	
+	> ul {
+		display: flex;
+		align-items: center;
+		height: 100%;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		text-align: center;
+		
+		> li {
+			flex-grow: 1;
+			position: relative;
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			
+			> a {
+				position: relative;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 100%;
+				padding: 0 10px;
+				overflow: hidden;
+				color: $text;
+				background: none transparent;
+				@include transition(all .2s);
+				text-decoration: none;
+				cursor: pointer;
+				font-size: 16px;
+				
+				i {
+					margin-left: 6px;
+				}
+			}
+			
+			&:hover > a,
+			&.active > a {
+				color: $white;
+				background: $primary;
+				
+				@if $scheme-type == 'dark' {
+					color: $white;
+					background: $base-accent-xl;
+				} @else if $scheme-type == 'light' {
+					color: $text;
+					background: darken($base-accent-d, 2%);
+				}
+			}
+			
+			> ul {
+				position: absolute;
+				left: 0;
+				top: 53px;
+				background: $base;
+				box-shadow: -5px 8px 15px -4px rgba($black, 0.06);
+				width: 245px;
+				font-size: 0;
+				text-align: left;
+				padding: 10px 0;
+				z-index: 99999;
+				pointer-events: none;
+				overflow: hidden;
+				opacity: 0;
+				@include transform(translateX(-50px));
+				@include transition(opacity .4s, transform 0s linear .4s);
+				
+				@if $scheme-type == 'dark' {
+					background: $base-accent;
+					border: 1px solid $base-accent-xxl;
+					border-radius: 0 0 5px 5px;
+				} @else if $scheme-type == 'light' {
+					background: $base-accent;
+					border: 1px solid $base-accent-xxd;
+					border-radius: 0 0 5px 5px;
+				}
+				
+				li {
+					display: block;
+					text-align: left;
+					margin-bottom: 0;
+					opacity: 0;
+					@include transform(translateX(-50px));
+					@include transition(opacity .4s, transform 0s);
+					
+					a {
+						display: block;
+						float: none;
+						padding: 8px 18px;
+						color: $text;
+						font-size: 15px;
+						line-height: 27px;
+						background: none transparent;
+						
+						&:before, &:after {
+							display: none;
+						}
+						
+						&:hover {
+							background: lighten($neutral-xl, 7%);
+							color: $text;
+							
+							@if $scheme-type == 'dark' {
+								background: $base-accent-xl;
+							} @else if $scheme-type == 'light' {
+								background: darken($base-accent-d, 2%);
+							}
+						}
+					}
+				}
+				
+				&:before {
+					display: block;
+					position: absolute;
+					top: -6px;
+					left: 0;
+					content: "";
+					width: 100%;
+					height: 6px;
+					background: none transparent;
+				}
+			}
+			
+			&:first-child a i {
+				margin: 0;
+			}
+			
+			&:hover > ul, &.active > ul {
+				@include transform(translateX(0));
+				@include transition(all .4s cubic-bezier(0.49, 0.73, 0.31, 0.98));
+				pointer-events: all;
+				opacity: 1;
+				
+				li {
+					@include transform(translateX(0));
+					@include transition(all .3s cubic-bezier(0.49, 0.73, 0.2, 1.11));
+					opacity: 1;
+				}
+			}
+
+		}
+	}
+	
+	&.nav-bar-sm {
+		> ul {
+			justify-content: space-between;
+			
+			> li {
+				flex-grow: 0;
+				
+				&:hover {
+					> a {
+						background: transparent;
+						color: $text;
+					}
+				}
+				
+				> a > i {
+					width: 30px;
+				    height: 30px;
+					border: 1px solid $primary;
+				    border-radius: 50%;
+				    font-size: 13px;
+				    line-height: 29px;
+				    vertical-align: middle;
+				    color: $primary;
+				    
+				    @if $scheme-type == 'dark' {
+						border: 1px solid $neutral-l;
+						color: $neutral-l;
+					} @else if $scheme-type == 'light' {
+						border: 1px solid $neutral-d;
+						color: $neutral-d;
+					}
+				}
+			}
+		}
+	}
+}
+
+.nav-content > ul > li:last-child:after {
+	display: block;
+	clear: both;
+}
+
+
+
+
+
+
+
+
+
+
+
+

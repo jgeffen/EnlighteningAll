@@ -1,0 +1,42 @@
+<h1>{{ heading }}</h1>
+
+<h2 class="title-underlined mb-0">Failure Reasons</h2>
+{% for label, text in errors %}
+    <p>{{ label|replace({'_': ' '})|title }}: {{ text }}</p>
+{% endfor %}
+
+<br>
+
+<h2 class="title-underlined mb-0">Void Details</h2>
+<p>Invoice: {{ invoice }}</p>
+<p>Amount: ${{ amount|number_format(2) }}</p>
+<p>Account: {{ account_number }}</p>
+<p>Date: {{ 'now'|date('F jS, Y') }}</p>
+
+<br>
+
+<h2 class="title-underlined mb-0">Billing Details</h2>
+<p>Name: {{ billing.name }}</p>
+<p>Phone: {{ billing.phone }}</p>
+<p>Email: {{ billing.email }}</p>
+<p>Address Line 1: {{ billing.address_line_1 }}</p>
+<p>Address Line 2: {{ billing.address_line_2 }}</p>
+<p>City: {{ billing.city }}</p>
+<p>State: {{ billing.state }}</p>
+<p>Country: {{ billing.country }}</p>
+<p>Zip Code: {{ billing.zip_code }}</p>
+
+<br>
+
+<h2 class="title-underlined mb-0">Photographer Package</h2>
+<p>Photographer: {{ package.photographer }}</p>
+<p>Package: {{ package.name }}</p>
+<p>Description: {{ package.description }}</p>
+
+{% if comments is not empty %}
+    <br>
+
+    <h2 class="title-underlined mb-0">Comments</h2>
+    <p>{{ comments|striptags('<br>')|raw }}</p>
+{% endif %}
+

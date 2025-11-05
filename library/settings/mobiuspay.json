@@ -1,0 +1,13 @@
+{
+  "mode": "production",
+  "production": {
+    "account": "1148929",
+    "private_key": "fGJxXDf5R7P46WPA2wFp9Psxn7xhfZgY",
+    "public_key": "checkout_public_z2b2K8Pb769MkNmKt247r2FBkd96Zafx"
+  },
+  "development": {
+    "account": "FenclAdminTest",
+    "private_key": "tPTB32KWkZfH5Pb9E4Utm6ExVmvbw443",
+    "public_key": "M494u6-H2CSYq-MpDKKB-reWW7J"
+  }
+}

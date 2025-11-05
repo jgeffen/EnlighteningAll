@@ -1,0 +1,16 @@
+{
+    "version": "v1.0",
+    "title": "Logo Carousel",
+    "content": "read-me.txt",
+    "enabled": "true",
+    "gallery": {
+        "main": "/examples/example1.png",
+        "1": "/examples/example2.jpg"
+    },
+    "dependencies": {
+        "core": {
+            "css":"logo-carousel.scss",
+            "js": "logo-carousel.js"
+        }
+    }
+}

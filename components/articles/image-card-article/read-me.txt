@@ -1,0 +1,49 @@
+/*||==========================================================||**
+**|| <------------------- REQUIREMENTS ---------------------> ||**
+**||==========================================================||*/
+IMAGE SIZE THUMB:		450 x 300px
+IMAGE SIZE FEATURED:	800 X 533px
+
+
+/*||==========================================================||**
+**|| <---------------------- OPTIONS -----------------------> ||**
+**||==========================================================||*/
+INFO TEXT:	TRUE, FALSE //Add Short Description Text for Article
+BUTTON:		'Button Text' //Pass In Button Text, The Button Will Link to Article Page
+DSETAILS:	Multiple Details Can Be Added, Pass in the Title of the Detail as the $Key and the Data as the $Value
+
+
+/*||==========================================================||**
+**|| <--------- RENDER CODE FOR STANDARD ARTICLE -----------> ||**
+**||==========================================================||*/
+
+======= COPY AND PASTE THIS CODE TO INSERT THE COMPONENT =======
+
+<?php Render::static_component('articles/image-card-article/image-card-article', array(
+	'items'		=> $items,
+	'info'		=> TRUE, //OPTION: Add Snippit of Content
+	//'button'	=> 'Buy Now', //OPTION: Add Button and Pass In Text
+	'details'	=> array(
+		'Posted Date: '		=> 'date', //OPTION: Pass in the title for $key and the data value for $value
+		//'Updated Date: '	=> 'updated_date'
+	)
+)); ?>
+
+
+/*||==========================================================||**
+**|| <--------- RENDER CODE FOR FEATURED ARTICLE -----------> ||**
+**||==========================================================||*/
+
+======= COPY AND PASTE THIS CODE TO INSERT THE COMPONENT =======
+	
+<?php Render::static_component('articles/image-card-article/image-card-featured', array(
+	'item'				=> !empty($featured) ? $featured : '',
+	'info'				=> TRUE, //OPTION: Add Snippit of Content
+	'info_desktop_only'	=> TRUE, //Only show the info text on desktop
+	'button'			=> 'Read More', //OPTION: Add Button and Pass In Text
+	'details'			=> array(
+		'Posted Date: '		=> 'date', //OPTION: Pass in the title for $key and the data value for $value
+		//'Updated Date: '	=> 'updated_date'
+	)
+)); ?>
+

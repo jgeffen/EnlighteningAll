@@ -1,0 +1,27 @@
+/*||==========================================================||**
+**|| <------------------- RENDER CODE ----------------------> ||**
+**||==========================================================||*/
+
+======= COPY AND PASTE THIS CODE TO INSERT THE COMPONENT =======
+
+<?php /* - RENDER ICON COLUMNS INFO BUTTONS COMPONENT - */ ?>
+<?php Render::static_component('info-buttons/icon-columns/icon-columns', array(
+	array(
+		'icon'		=> '<i class="fal fa-user-chart"></i>',
+		'title'		=> 'Services',
+		'link'		=> '/services.php', //OPTION: Link can be left empty for non-linking content
+		'content'	=> 'This is placeholder text, it will be removed before the website is set live. All example text will be deleted when the website is complete. Placeholder content is used for display purposes only and will be replaced once the official text is available. Placeholder content is used for display purposes only and will be replaced.'
+	),
+	array(
+		'icon'		=> '<i class="fal fa-box-full"></i>',
+		'title'		=> 'Products',
+		'link'		=> '/products.php', //OPTION: Link can be left empty for non-linking content
+		'content'	=> 'This will be removed before the website is set live. All example text will be deleted when the website is complete. Placeholder content is used for display purposes only and will be replaced once the official text is available. Placeholder content is used for display purposes only and will be replaced once the official text is available.'
+	),
+	array(
+		'icon'		=> '<i class="fal fa-calendar-week"></i>',
+		'title'		=> 'Events',
+		'link'		=> '/events.php', //OPTION: Link can be left empty for non-linking content
+		'content'	=> 'This is placeholder text, it will be removed before the website is set live. All example text will be deleted when the website is complete. Placeholder content is used for display purposes only. Placeholder content is used for display purposes only and will be replaced once the official text is available.'
+	)
+)); ?>

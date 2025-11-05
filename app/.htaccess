@@ -1,0 +1,2 @@
+# Stop direct access
+deny from all

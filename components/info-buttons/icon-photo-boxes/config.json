@@ -1,0 +1,15 @@
+{
+    "version": "v1.0",
+    "title": "Icon Photo Boxes",
+    "content": "read-me.txt",
+    "enabled": "true",
+    "gallery": {
+        "main": "example.jpg",
+        "1": "example.png"
+    },
+    "dependencies": {
+        "core": {
+            "css":"icon-photo-boxes.scss"
+        }
+    }
+}

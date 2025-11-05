@@ -1,0 +1,46 @@
+<li class="media mb-4" data-comment-id="{{ comment.id }}">
+    <a href="{{ member.link }}">
+        <img class="mr-3" src="{{ member.avatar }}" alt="{{ member.descriptor|escape('html_attr') }}" style="width:50px;">
+    </a>
+  
+
+    <div class="media-body">
+        <p class="my-0">{{ comment.content|striptags('<br>,<strong>,<em>,<u>')|raw }}</p>
+        <small>
+            <a href="{{ member.link }}">
+                {{ member.username }}
+            </a>
+            
+            <span class="text-muted">
+                {{ comment.date|date('F j, Y, g:i a') }}
+            </span>
+
+            {% if member.self == false %}
+                <div class="dropdown">
+                    <a href="#" onclick="showCommentReportModal({{ comment.id }})" rel="tooltip-comment-report">
+                        <i class="fa-thin fa-triangle-exclamation"></i>
+                    </a>
+
+                    <div class="dropdown-menu">
+                        <h6 class="dropdown-header text-center py-0">Report Comment</h6>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#" data-comment-action="report" data-type="Abusive Language">Abusive Language</a>
+                        <a class="dropdown-item" href="#" data-comment-action="report" data-type="Criminal">Criminal</a>
+                        <a class="dropdown-item" href="#" data-comment-action="report" data-type="Fake">Fake</a>
+                        <a class="dropdown-item" href="#" data-comment-action="report" data-type="Fraudulent">Fraudulent</a>
+                        <a class="dropdown-item" href="#" data-comment-action="report" data-type="Harassment">Harassment</a>
+                        <a class="dropdown-item" href="#" data-comment-action="report" data-type="Hateful">Hateful</a>
+                        <a class="dropdown-item" href="#" data-comment-action="report" data-type="Illegal">Illegal</a>
+                        <a class="dropdown-item" href="#" data-comment-action="report" data-type="Inappropriate">Inappropriate</a>
+                        <a class="dropdown-item" href="#" data-comment-action="report" data-type="Racist">Racist</a>
+                        <a class="dropdown-item" href="#" data-comment-action="report" data-type="Spam">Spam</a>
+                    </div>
+                </div>
+            {% else %}
+                <a href="#" rel="tooltip-comment-remove" data-comment-action="remove">
+                    <i class="fa-thin fa-trash-can"></i>
+                </a>
+            {% endif %}
+        </small>
+    </div>
+</li>

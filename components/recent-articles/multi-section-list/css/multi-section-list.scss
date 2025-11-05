@@ -1,0 +1,168 @@
+@import "/css/_variables.scss";
+
+.category-list-recent-articles {
+	background: $primary;
+	padding-bottom: 30px;
+	
+	.title-wrap {
+		background: lighten($primary, 5%);
+		margin-bottom: 40px;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		text-align: center;
+		
+		@media(max-width: 767px) {
+			margin-bottom: 20px;
+		}
+		
+		h2 {
+			margin: 0;
+		}
+	}
+	
+	* {
+		color: $white;
+	}
+	
+	.title-underlined {
+		border-color: $primary-xl;
+	}
+	
+	a:hover {
+		color: inherit;
+		text-decoration: underline;
+	}
+	
+	&.component-background-primary {
+		background: $primary;
+		
+		.title-wrap {
+			background: lighten($primary, 5%);
+		}
+		
+		.title-underlined {
+			border-color: $white;
+		}
+	}
+	
+	&.component-background-accent {
+		background: $accent;
+		
+		.title-wrap {
+			background: lighten($accent, 5%);
+		}
+		
+		.title-underlined {
+			border-color: $accent-xl;
+		}
+	}
+	
+	&.component-background-neutral {
+		background: $neutral;
+		
+		.title-wrap {
+			background: darken($neutral, 5%);
+		}
+		
+		.title-underlined {
+			border-color: $neutral-xd;
+		}
+	}
+	
+	&.component-background-black {
+		background: $black;
+		
+		.title-wrap {
+			background: lighten($black, 10%);
+		}
+		
+		.title-underlined {
+			border-color: $neutral;
+		}
+		
+		@if $scheme-type == 'dark' {
+			background: $base-accent;
+			border-top: 1px solid $base-accent-xxl;
+		
+			.title-wrap {
+				background: $base-accent-l;
+			}
+			
+			.title-underlined {
+				border-color: $neutral-d;
+			}
+		}
+	}
+	
+	&.component-background-white {
+		background: $white;
+		
+		.title-wrap {
+			background: darken($white, 8%);
+		}
+		
+		.title-underlined {
+			border-color: $neutral;
+		}
+		
+		@if $scheme-type == 'light' {
+			background: $base-accent;
+			border-top: 1px solid $base-accent-xxd;
+		
+			.title-wrap {
+				background: $base-accent-d;
+				border-bottom: 1px solid $base-accent-xxd;
+			}
+			
+			.title-underlined {
+				border-color: $neutral;
+			}
+		}
+	}
+	
+	&.component-text-primary {
+		* {
+			color: $primary;
+		}
+	}
+	
+	&.component-text-accent {
+		* {
+			color: $accent;
+		}
+	}
+	
+	&.component-text-neutral {
+		* {
+			color: $neutral;
+		}
+	}
+	
+	&.component-text-black {
+		* {
+			color: $text;
+		}
+	}
+	
+	&.component-text-white {
+		* {
+			color: $white;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+<div id="table-filter" class="form-group">
+    <div class="select-wrap form-control">
+        <select>
+            {% for value,text in categories %}
+                <option value="{{ value }}">
+                    {{ text }}
+                </option>
+            {% endfor %}
+        </select>
+        <div class="select-box"></div>
+    </div>
+</div>

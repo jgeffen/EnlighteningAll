@@ -1,0 +1,72 @@
+<div id="page-title-btn">
+    <h1>Member Check-In: {{ username }}</h1>
+</div>
+
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center h-100" data-member-id="{{ id }}">
+    <div class="col align-self-center">
+        <div class="card border-0">
+            <img class="card-img-top" src="{{ image }}">
+
+            <div class="card-body">
+                <h5 class="card-title">
+                    {{ name }}
+                    {% if partner.name is not null %}
+                        + {{ partner.name }}
+                    {% endif %}
+                </h5>
+
+                <p class="card-text">
+                    {% if bio is not empty %}
+                        {{ bio|striptags('<br>,<p>,<strong>,<em>,<u>')|raw }}
+                    {% else %}
+                        <small class="text-muted">No Bio Set</small>
+                    {% endif %}
+                </p>
+
+                <hr>
+
+                <h5 class="card-title">Member Details</h5>
+
+                <p class="card-text"><strong>Bead Colors:</strong> {{ beads|join(', ') }}</p>
+                <p class="card-text"><strong>Necklace Color:</strong> {{ necklace }}</p>
+
+                {% if partner.name is not null %}
+                    <hr>
+
+                    <h5 class="card-title">Partner Details</h5>
+
+                    <p class="card-text"><strong>Bead Colors:</strong> {{ partner.beads|join(', ') }}</p>
+                    <p class="card-text"><strong>Necklace Color:</strong> {{ partner.necklace }}</p>
+                {% endif %}
+
+                <hr>
+
+                <div class="form-group">
+                    <label for="expiration">Expiration:</label>
+                    <div class="select-wrap form-control">
+                        <select id="expiration" name="expiration">
+                            {% for days in 1..30 %}
+                                <option value="{{ days }}">
+                                    +{{ days }} Days
+                                </option>
+                            {% endfor %}
+                        </select>
+                        <div class="select-box"></div>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="text-center">
+                    <button type="button" class="btn btn-danger btn-lg" data-check-in-action="cancel">
+                        <i class="fa-regular fa-ban"></i> Cancel
+                    </button>
+
+                    <button type="button" class="btn btn-success btn-lg" data-check-in-action="confirm">
+                        <i class="fa-regular fa-building-circle-check"></i> Confirm
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

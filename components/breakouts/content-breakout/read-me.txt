@@ -1,0 +1,50 @@
+/*||==========================================================||**
+**|| <------------------- REQUIREMENTS ---------------------> ||**
+**||==========================================================||*/
+IMAGE SIZE: 1000 x 667px
+BACKGROUND IMAGE SIZE: 1600 x 700px
+MAP: Add iframe, set width & height of iframe to 100%, image_position is still used for map
+
+
+/*||==========================================================||**
+**|| <---------------------- OPTIONS -----------------------> ||**
+**||==========================================================||*/
+IMAGE: Provide to sit left/right of content
+IMAGE POSITION: left, right
+BACKGROUND IMAGE: Provide url for background image
+BACKGROUND IMAGE SCROLL: parallax, fixed - Leave empty for normal background image
+FULL WIDTH CONTENT: TRUE, FALSE - Setting to TRUE will make the content expand to the edge of the window
+HEIGHT: Set a fixed height in px if there is no content and it's just a background image(example: 500px)
+BACKGROUND COLOR: primary, accent, neutral, black, white
+TEXT COLOR: primary, accent, neutral, black, white
+TITLE: Basic H2 tile will be output
+SUPER TITLE: sm, md, lg, xl - Leave empty to disable super title - Be sure to accent part of the title with a <b> or <strong> tag
+CONTENT: Add only paragraph text with line breaks(No HTML)
+HTML: Replace title and content with custom HTML
+MAP: Provide iframe for map in place of image
+
+/*||==========================================================||**
+**|| <------------------- RENDER CODE ----------------------> ||**
+**||==========================================================||*/
+
+======= COPY AND PASTE THIS CODE TO INSERT THE COMPONENT =======
+
+<?php /* - RENDER CONTENT BREAKOUT COMPONENT - */ ?>	
+<?php Render::component('breakouts/content-breakout/content-breakout', array(
+	'content_breakout_id'		=> $content_breakout_id = ($content_breakout_id ?? 0) + 1,
+ 	'image'						=> '/images/samples/breakouts/content-breakout.jpg', //IMAGE SIZE: 1000 x 667px
+ 	'image_position'			=> 'right', //OPTIONS: left, right
+ 	'background_image'			=> '', //OPTIONS: Provide path for Background Image
+ 	'background_image_scroll'	=> '', //OPTIONS: parallax, fixed - Leave empty for normal background image
+ 	'full_width_content'		=> FALSE, //OPTIONS TRUE, FALSE - Setting to TRUE will make the content expand to the edge of the window
+ 	'height'					=> '', //OPTIONS: Set a fixed height in px if there is no content and it's just a background image(example: 500px)
+ 	'background_color'			=> 'primary', //OPTIONS: primary, accent, neutral, black, white
+	'text_color'				=> 'white', //OPTIONS: primary, accent, neutral, black, white
+	'title'						=> 'Example <b>Breakout</b> Section',
+	'super_title'				=> 'md', //OTPIONS: sm, md, lg, xl - Leave empty to disable super title - Be sure to accent part of the title with a <b> or <strong> tag
+	'content'					=> 'This is placeholder text, it will be removed before the website is set live. All example text will be deleted when the website is complete. Placeholder content is used for display purposes only and will be replaced once the official text is available. Placeholder content is used for display purposes only and will be replaced once the official text is available. This is placeholder text, it will be removed before the website is set live. This is placeholder text, it will be removed before the website is set live.
+	
+		All example text will be deleted when the website is complete. Placeholder content is used for display purposes only and will be replaced once the official text is available. Placeholder content is used for display purposes only and will be replaced once the official text is available. This is placeholder text, it will be removed before the website is set live. This is placeholder text, it will be removed before the website is set live. All example text will be deleted when the website is complete.All example text will be deleted when the website is complete. Placeholder content is used for display purposes only and will be replaced once the official text is available. Placeholder content is used for display purposes only and will be replaced once the official text is available.',
+	'html'						=> '', // OPTION: Replace title and content with custom HTML
+	'map'						=> '', //REQUIREMENTS: Add iframe, set width & height of iframe to 100%, image_position is still used for map
+)); ?>

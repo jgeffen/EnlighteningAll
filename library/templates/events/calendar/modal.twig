@@ -1,0 +1,62 @@
+<div class="modal fade" id="ajax-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <i class="fal fa-calendar-alt" aria-hidden="true"></i>
+                <h3 class="modal-title">{{ heading }}</h3>
+            </div>
+
+            <div class="modal-body">
+                <div class="trim mt-0 mb-4 pt-4 pb-2">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>
+                                <i class="fal fa-calendar-alt"></i>
+                                <b>Date:</b> {{ date }}
+                            </p>
+                        </div>
+
+                        {% if event_times|trim is not empty %}
+                            <div class="col-md-6">
+                                <p>
+                                    <i class="fa-solid fa-clock"></i>
+                                    <b>Time:</b> {{ event_times }}
+                                </p>
+                            </div>
+                        {% endif %}
+
+                        {% if location|trim is not empty %}
+                            <div class="col-md-6">
+                                <p>
+                                    <i class="fal fa-map-marked"></i>
+                                    <b>Location:</b> {{ location }}
+                                </p>
+                            </div>
+                        {% endif %}
+
+                        {% if price_text|trim is not empty %}
+                            <div class="col-md-6">
+                                <p>
+                                    <i class="fal fa-tags"></i>
+                                    <b>Price:</b> {{ price_text }}
+                                </p>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <p>{{ text|striptags('<br>')|raw }}</p>
+
+            </div>
+
+            <div class="modal-footer">
+                <a class="btn btn-primary" href="{{ link }}" title="{{ alt }}">
+                    View Event Details
+                </a>
+
+                <button type="button" class="btn btn-outline" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

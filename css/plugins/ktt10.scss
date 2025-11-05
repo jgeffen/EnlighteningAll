@@ -1,0 +1,33 @@
+.ktt10-btn__static {
+	display: -webkit-box !important;
+	display: -ms-flexbox !important;
+	display: flex !important;
+	-webkit-box-pack: center !important;
+	justify-content: center !important;
+	position: fixed !important;
+	background-color: #36D6B5 !important;
+	color: #FFF !important;
+	width: 60px !important;
+	height: 60px !important;
+	-webkit-box-align: center !important;
+	align-items: center !important;
+	border: 0 !important;
+	border-radius: 50% !important;
+	bottom: 20px !important;
+	right: 20px !important;
+	outline: none !important;
+	cursor: pointer !important;
+	z-index: 8888 !important;
+	padding: 0 !important;
+
+	&:hover {
+		transform: scale(1.1) !important;
+		transition: all ease 0.2s !important;
+	}
+
+	img {
+		height: 70% !important;
+		width: 70% !important;
+		object-fit: contain !important;
+	}
+}

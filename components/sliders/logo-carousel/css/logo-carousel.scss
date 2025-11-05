@@ -1,0 +1,66 @@
+@import "/css/_variables.scss";
+
+.logo-carousel-wrap {
+	position: relative;
+	background: $white;
+	width: 100%;
+	padding: 15px 45px;
+	box-shadow: 0 0 15px rgba($black, .13);
+	
+	@if $scheme-type == 'dark' {
+		border-top: 1px solid $base-accent-xxl;
+		box-shadow: none;
+	} @else if $scheme-type == 'light' {
+		border-top: 1px solid $base-accent-xxd;
+		box-shadow: none;
+	}
+	
+	.logo-carousel {
+	    .swiper-slide {
+		    img {
+			    display: block;
+			    width: 100%;
+			    max-width: 150px;
+			    margin: 0 auto;
+		    }
+	    }
+	}
+	
+	.swiper-button-next, .swiper-button-prev {
+	    background: none;
+	    width: 30px;
+	    height: 30px;
+	    margin-top: -15px;
+	    right: 10px;
+	    z-index: 99;
+	    outline: none;
+	    opacity: .7;
+	    @include transition(all .2s);
+	    
+	    &:before, &:after {
+		    display: none;
+	    }
+	    
+	    &.swiper-button-disabled {
+		    display: none;
+	    }
+
+	    i {
+		    font-size: 30px;
+		    color: $primary;
+		    
+		    @media(max-width: 600px) {
+				font-size: 22px;
+			}
+	    }
+
+	    &:hover {
+		    opacity: 1;
+	    }
+    }
+
+    .swiper-button-prev {
+	    right: auto;
+	    left: 10px;
+    }
+}

@@ -1,0 +1,42 @@
+<div class="modal fade" tabindex="-1" data-member-id="{{ member.id }}">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Account Approval: {{ member.username }}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+
+            <div class="modal-body card border-0 rounded-0 p-0">
+            
+                <div class="card-body pt-3 pb-0">
+                    <h2 class="card-title text-center mb-3">
+                        {{ member.name }}
+                        
+                    </h2>
+                    
+                </div>
+            </div>
+
+            <div class="modal-footer border-top p-3" data-type="account">
+                <div class="mx-auto">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">
+                        <i class="fa-solid fa-user-xmark"></i>
+                        Cancel
+                    </button>
+
+                    <button type="button" class="btn btn-success" data-account-approval-action="approve">
+                        <i class="fa-solid fa-user-check"></i>
+                        Approve
+                    </button>
+
+                    <button class="btn btn-info" data-account-approval-action="preview">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        View Profile
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

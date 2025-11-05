@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^(.*)\.mp3$ _audio.php?encoded=$1 [L]

@@ -1,0 +1,42 @@
+<div class="background-none">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-center h-100">
+        <div class="col align-self-center">
+            <div class="card border-0">
+                <img class="card-img-top" src="{{ image }}">
+
+                <div class="card-body">
+                    <h5 class="card-title">
+                        {{ name }}
+                        {% if partner.name is not null %}
+                            + {{ partner.name }}
+                        {% endif %}
+                    </h5>
+
+                    <p class="card-text">
+                        {% if bio is not empty %}
+                            {{ bio|striptags('<br>,<p>,<strong>,<em>,<u>')|raw }}
+                        {% else %}
+                            <small class="text-muted">No Bio Set</small>
+                        {% endif %}
+                    </p>
+
+                    <hr>
+
+                    <h5 class="card-title">Member Details</h5>
+
+                    <p class="card-text"><strong>Bead Colors:</strong> {{ beads|join(', ') }}</p>
+                    <p class="card-text"><strong>Necklace Color:</strong> {{ necklace }}</p>
+
+                    {% if partner.name is not null %}
+                        <hr>
+
+                        <h5 class="card-title">Partner Details</h5>
+
+                        <p class="card-text"><strong>Bead Colors:</strong> {{ partner.beads|join(', ') }}</p>
+                        <p class="card-text"><strong>Necklace Color:</strong> {{ partner.necklace }}</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

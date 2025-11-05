@@ -1,0 +1,14 @@
+{
+    "version": "v1.0",
+    "title": "Text Information Buttons",
+    "content": "read-me.txt",
+    "enabled": "true",
+    "gallery": {
+        "main": "example.jpg"
+    },
+    "dependencies": {
+        "core": {
+            "css":"descriptive-text__info-buttons--scripts.scss"
+        }
+    }
+}

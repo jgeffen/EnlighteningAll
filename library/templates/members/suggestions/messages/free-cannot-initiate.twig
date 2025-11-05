@@ -1,0 +1,32 @@
+<div id="ajax-modal" class="modal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+                <div class="media">
+                    <img class="align-self-center mr-3 img-thumbnail" src="{{ avatar }}" alt="{{ alt }}">
+
+                    <div class="media-body">
+                        <h5>{{ username }}</h5>
+						{% if type == "private" %}
+                        <p class="card-text">Private photos are only available for premium members. Unlock this feature by upgrading to a premium subscription today!
+
+</p>
+{% else %}
+    <p>Your subscription does not allow you start a conversation. Upgrade your account now for full access!</p>
+{% endif %}
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <a class="btn btn-success btn-block" href="/members/subscription">My Subscription Benefits</a>
+            </div>
+        </div>
+    </div>
+</div>

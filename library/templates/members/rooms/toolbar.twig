@@ -1,0 +1,37 @@
+<nav id="room-toolbar-{{ id }}" class="navbar">
+    {% if flags.favorite %}
+        <a class="navbar-brand" href="#" data-room-action="favorite">
+            <i class="fa-solid fa-heart"></i> Favorite
+        </a>
+    {% else %}
+        <a class="navbar-brand text-dark" href="#" data-room-action="favorite">
+            <i class="fa-regular fa-heart"></i> Favorite
+        </a>
+    {% endif %}
+
+    {# This is disabled for now
+        {% if flags.notification %}
+            <a class="navbar-brand" href="#" data-room-action="notifications">
+                <i class="fa-solid fa-bell"></i> Notifications
+            </a>
+        {% else %}
+            <a class="navbar-brand text-dark" href="#" data-room-action="notifications">
+                <i class="fa-regular fa-bell"></i> Notifications
+            </a>
+        {% endif %}
+    #}
+
+    {% if flags.review %}
+        <a class="navbar-brand" href="#" data-room-action="reviews">
+            <i class="fa-solid fa-circle-star"></i> Reviews
+        </a>
+    {% else %}
+        <a class="navbar-brand text-dark" href="#" data-room-action="reviews">
+            <i class="fa-regular fa-circle-star"></i> Reviews
+        </a>
+    {% endif %}
+
+    <a class="navbar-brand text-dark" href="#" data-action="availability">
+        <i class="fa-regular fa-calendar-check"></i> Availability
+    </a>
+</nav>
